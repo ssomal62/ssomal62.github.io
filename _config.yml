@@ -104,11 +104,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "Auir - Forge Upgrade Sound"
+  avatar           : "images/itsme.jpg"
   bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  location         : "Seoul"
+  email            : "wxy890@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
