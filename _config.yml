@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Aiur"
-  avatar           : "images/itsme.jpg"
+  avatar           : "blob/master/images/itsme.jpg"
   bio              : "I am an **amazing** person."
   location         : "Seoul"
   email            : "wxy890@gmail.com"
