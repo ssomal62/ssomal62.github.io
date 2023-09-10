@@ -105,8 +105,8 @@ analytics:
 # Site Author
 author:
   name             : "Aiur"
-  avatar           : "assets/images/itsme.jpg"
-  bio              : "변경#1"
+  avatar           : "assets/images/img.jpg"
+  bio              : "매일 1코테 + 1포스트"
   location         : "Seoul"
   email            : "wxy890@gmail.com"
   links:
