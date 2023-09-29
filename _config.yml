@@ -109,13 +109,13 @@ analytics:
 author:
   name             : "Aiur"
   avatar           : "./assets/images/img.jpg"
-  bio              : "열심히 "
+  bio              : "機会は貯金できない。"
   location         : "Seoul"
   email            : "wxy890@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "wxy890@gmail.com"
+    - label: "CompanionAnimal"
+      icon: "fas fa-fw fa-paw"
+      url: "./assets/images/gyul.png"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -135,9 +135,9 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
+    - label: "test"
+      icon: "fab fa-fw"
+     # url: ""
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
