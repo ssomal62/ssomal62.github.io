@@ -150,3 +150,9 @@ M
 _posts/2023-09-30-study004.md,b\2\b251eb651d217cd15eb57b4332caad2a2d243aae
 M
 _posts/2023-09-30-study005.md,e\e\ee98e42c71b6addda29df01253c4301e633a7aea
+E
+_layouts/default.html,8\8\88dc137ae43bf7a2fa27381f48221b3eb9908aac
+E
+_layouts/archive.html,7\b\7b0f942d0bd00b54bcbb6945702f72853187019b
+M
+_posts/2023-09-30-study006.md,c\f\cfd972feedd376a3eab707b276a86c49594c1577
