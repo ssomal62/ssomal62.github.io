@@ -18,8 +18,6 @@ G
 ;
 _config.yml,c\d\cd089ae45ce870c45e434019e8f1ed4f066cd425
 G
-_posts/2023-09-18-01.md,c\c\cc7d1f610df6944156564c88483cfe5ae924ca9c
-G
 _posts/2023-09-18-02.md,f\6\f6e47b56b93f5c58a5df5a5204597615aa27b258
 G
 _posts/2023-09-11-01.md,2\9\2962bcb34cce6736e1de6613917770b4091a2d65
@@ -134,3 +132,21 @@ N
 test/_config.yml,9\9\991fc51d707b2079bf1ee197e19b75f0050a91b5
 D
 assets/css/main.scss,3\9\39a50fefad724cd0aa7b6ec792325957ea1751b3
+R
+"_sass/minimal-mistakes/_forms.scss,6\7\67c74f04d4010e27d65fbb0ec941d3e4e2a2bbfc
+S
+#_sass/minimal-mistakes/_footer.scss,a\1\a1b43f460d40b41696f47d510742541ff8dc1477
+Q
+!_sass/minimal-mistakes/_base.scss,4\5\45b11958e0f820c694ee58b700846bc136815922
+R
+"_sass/minimal-mistakes/_reset.scss,d\e\de27afd5f7a689280a2e02505e37d5e294f26e7d
+M
+_posts/2023-09-18-study001.md,f\5\f5306b7bc22037cabfe377ac04427dce1c6c653e
+M
+_posts/2023-09-29-study002.md,7\a\7a806a82ec8381bcb4d4b0291d6740272d93bcc3
+M
+_posts/2023-09-30-study004.md,b\2\b251eb651d217cd15eb57b4332caad2a2d243aae
+M
+_posts/2023-09-29-study003.md,0\5\05f059f66dcdc9812de5c6a883eee5d89f1ac510
+M
+_posts/2023-09-30-study005.md,e\e\ee98e42c71b6addda29df01253c4301e633a7aea

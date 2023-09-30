@@ -11,6 +11,29 @@
         
         
 
+<span style = "font-size : x-small;"> xl-small 사이즈 </span>
+
+<br>
+
+<span style = "font-size : smaller;"> smaller 사이즈 </span>
+
+<br>
+
+<span style = "font-size : small;"> small 사이즈 </span>
+
+<br>
+
+<span style = "color : #8e8b82; font-size: smaller;">
+코멘트용
+</span>
+
+<br>
+
+<span style = "background-color: #1976D2; color : #F0FFF0; ">
+파란 배경
+</span>
+
+
 
 
 //문법을 그대로 보여주고 싶을 때 : 마크다운 문법 앞에 '\'를 붙여준다.
