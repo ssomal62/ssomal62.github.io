@@ -158,3 +158,5 @@ M
 _posts/2023-09-30-study006.md,c\f\cfd972feedd376a3eab707b276a86c49594c1577
 L
 _posts/2023-10-01-sqrd001.md,7\0\70c7d105f036278a67df142293d570a78f623486
+C
+_posts/0_mermaid.md,2\5\257a3a7b83a3e52effef5f4ac87d5a7961c96a5a
