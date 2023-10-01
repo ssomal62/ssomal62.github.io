@@ -1,3 +1,33 @@
+---
+layout : single
+title : "[002] 조조장의 추석 선물#1 - 자료구조 문제 01~05" 
+categories : study
+tag : [정처기,자료구조]
+toc: true
+toc_sticky: true
+breadcrumb: true
+---
+
+<span style = "color : #8e8b82; font-size: smaller;">
+코멘트용
+</span>
+
+
+# 토글 리스트
+***
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
+😎숨겨진 내용😎
+
+* 어디까지 숨겨져 있나요
+* 어디까지 숨겨져 있나요
+* 어디까지 숨겨져 있나요
+* 어디까지 숨겨져 있나요
+
+</div>
+</details>
 
 # 중첩구조
 
@@ -23,9 +53,6 @@
 
 <br>
 
-<span style = "color : #8e8b82; font-size: smaller;">
-코멘트용
-</span>
 
 <br>
 
@@ -141,21 +168,7 @@
 
 
 
-# 토글 리스트
-***
-<details>
-<summary>여기를 눌러주세요</summary>
-<div markdown="1">       
 
-😎숨겨진 내용😎
-
-  * 어디까지 숨겨져 있나요
-  * 어디까지 숨겨져 있나요
-  * 어디까지 숨겨져 있나요
-  * 어디까지 숨겨져 있나요
-
-</div>
-</details>
 
 # 버튼 ?? 왜이럼?
 ***
