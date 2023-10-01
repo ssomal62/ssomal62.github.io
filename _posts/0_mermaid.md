@@ -11,6 +11,12 @@ erDiagram
 
 ```
 
+```mermaid
+erDiagram
+    Location ||--o{ Person : places
+
+
+```
 
 ```mermaid
 

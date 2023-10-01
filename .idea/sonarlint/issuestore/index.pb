@@ -79,3 +79,7 @@ L
 _posts/0_edit.md,1\c\1cd6fb6adca344f9c2950bae023cd535e61a0dee
 C
 _posts/0_mermaid.md,2\5\257a3a7b83a3e52effef5f4ac87d5a7961c96a5a
+M
+_includes/archive-single.html,5\6\56f373d82a2c422cfc1a62c29e9435ea47a52628
+J
+_includes/head/custom.html,e\e\eed7d824664f7d7a5708f7174dd11fe423f190e9
