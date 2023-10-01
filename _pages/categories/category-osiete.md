@@ -1,5 +1,5 @@
 ---
-title: "教えて!gpt先生"  # 게시물 클릭했을 때 리스트 상단에 보이는 제목
+title: "おしえて!gpt先生"  # 게시물 클릭했을 때 리스트 상단에 보이는 제목
 layout: archive
 permalink: categories/osiete
 author_profile: true
