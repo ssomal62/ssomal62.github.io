@@ -115,7 +115,7 @@ author:
   links:
     - label: "CompanionAnimal"
       icon: "fas fa-fw fa-paw"
-      url: "./assets/images/gyul.png"
+      url: "./_posts/2023-10-02-gyul"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
