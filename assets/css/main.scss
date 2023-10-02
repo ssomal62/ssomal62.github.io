@@ -7,3 +7,23 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: normal;
+  src: url( "../../assets/font/D2Coding.woff2" ) format( "woff2" ),
+  url('../../assets/font/D2Coding.woff') format('woff');
+  font-display: swap;
+}
+
+/* D2Coding */
+@font-face {
+  font-family: "D2Coding-ligature";
+  font-style: normal;
+  font-weight: normal;
+  src: url( "../../assets/font/D2Codingligature.woff2" ) format( "woff2" ),
+  url('../../assets/font/D2Codingligature.woff') format('woff');
+  font-display: swap;
+}

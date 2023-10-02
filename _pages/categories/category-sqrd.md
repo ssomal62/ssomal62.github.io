@@ -1,5 +1,5 @@
 ---
-title: "CleanCode"  # 게시물 클릭했을 때 리스트 상단에 보이는 제목
+title: "SQRD"  # 게시물 클릭했을 때 리스트 상단에 보이는 제목
 layout: archive
 permalink: categories/sqrd
 author_profile: true

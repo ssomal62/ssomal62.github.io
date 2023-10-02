@@ -75,10 +75,6 @@ L
 _posts/2023-10-01-sqrd001.md,7\0\70c7d105f036278a67df142293d570a78f623486
 ;
 _config.yml,c\d\cd089ae45ce870c45e434019e8f1ed4f066cd425
-@
-_posts/0_edit.md,1\c\1cd6fb6adca344f9c2950bae023cd535e61a0dee
-C
-_posts/0_mermaid.md,2\5\257a3a7b83a3e52effef5f4ac87d5a7961c96a5a
 M
 _includes/archive-single.html,5\6\56f373d82a2c422cfc1a62c29e9435ea47a52628
 J

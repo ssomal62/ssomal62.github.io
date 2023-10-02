@@ -13,8 +13,6 @@ G
 _posts/2023-09-10-02.md,2\2\222727d1e343cbb9d2b1d50d13c57e4e3b724dbc
 G
 _posts/2023-09-18-03.md,d\0\d0b740046d84264bb78cc4ffd66d17ba2ddbbd9f
-@
-_posts/0_edit.md,1\c\1cd6fb6adca344f9c2950bae023cd535e61a0dee
 ;
 _config.yml,c\d\cd089ae45ce870c45e434019e8f1ed4f066cd425
 G
@@ -158,7 +156,5 @@ M
 _posts/2023-09-30-study006.md,c\f\cfd972feedd376a3eab707b276a86c49594c1577
 L
 _posts/2023-10-01-sqrd001.md,7\0\70c7d105f036278a67df142293d570a78f623486
-C
-_posts/0_mermaid.md,2\5\257a3a7b83a3e52effef5f4ac87d5a7961c96a5a
 J
 _includes/head/custom.html,e\e\eed7d824664f7d7a5708f7174dd11fe423f190e9
