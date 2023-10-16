@@ -185,3 +185,16 @@ L
 _posts/2023-10-08-cote002.md,0\a\0a26f6c046d6037e74902a3b619839c1d7020ac7
 J
 _posts/2023-10-10-js005.md,8\8\88eca6b90b16149f8848dd4dbebf2c4d00eb4f3c
+J
+_posts/2023-10-11-js006.md,d\4\d4e7b088e7e02f29dd8fa9a025419d2360943315
+:
+
+index.html,f\6\f6013a00b362253c64368d6eebc50ea2131754e2
+F
+docs/_docs/11-posts.md,f\f\ff55bfc4b744a1a8e66da2c60c0c249d8a3c1e8b
+H
+docs/_docs/10-layouts.md,3\3\336e768e1ebfce330ed998aa4f7409ad6fd11146
+J
+_posts/2023-10-16-js007.md,a\5\a573a4be3bf49dccaec6e9b1e78e21cb0dc15ee8
+N
+_posts/2023-10-16-jsprac002.md,3\2\3256d88a9d82f7836ef6e7fff9f3f488837f3ee3
