@@ -208,3 +208,19 @@ M
 _posts/dddd.md,9\0\90ac323c945e54d54da20fa9339f6b184f75124c
 M
 _posts/2023-10-19-linux003.md,3\f\3f4f1676dd0ff714e46178124e31e4caa50dbd00
+M
+_includes/posts-category.html,e\b\ebe6a6fa10349a57841c6d2c38ce87d1240dc6a8
+H
+_includes/posts-tag.html,d\2\d245bf79a4e889c6f10b6d0c17e0da1b25276d44
+F
+_layouts/category.html,2\0\2081e30e01bfa0d640cdef1827bc9d5c3bdd0a8c
+H
+_layouts/categories.html,8\9\893c257b0699e22a049ecb9e41605b8e6fd3bc15
+B
+_includes/nav_list,6\3\63ff9ce4a4dd229cdd03ff9afc6639418f8ce149
+S
+#_pages/categories/category-linux.md,c\0\c0eb6cc3bf8ead83f5154762c9bacfdfe14613ed
+T
+$_pages/categories/category-typing.md,d\8\d8aaec633b259ba2b2a848b24b3956832ebd5dbf
+M
+_posts/2023-10-20-linux003.md,c\7\c77a06fd957ac9ab3cf5be7c24f3c8f087e67e88
