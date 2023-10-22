@@ -179,8 +179,6 @@ G
 _posts/2023-09-24-01.md,6\8\6826451be680bf0fa854b3489dd44492f7986789
 G
 _posts/2023-09-24-02.md,c\3\c338683f142deabb54e37fcbb5578a381dc843fe
-J
-_posts/2023-10-10-js005/md,e\9\e93e1a19e195d931ac163b5f39b84a9a29b57a72
 L
 _posts/2023-10-08-cote002.md,0\a\0a26f6c046d6037e74902a3b619839c1d7020ac7
 J
@@ -207,8 +205,6 @@ M
 >
 _posts/dddd.md,9\0\90ac323c945e54d54da20fa9339f6b184f75124c
 M
-_posts/2023-10-19-linux003.md,3\f\3f4f1676dd0ff714e46178124e31e4caa50dbd00
-M
 _includes/posts-category.html,e\b\ebe6a6fa10349a57841c6d2c38ce87d1240dc6a8
 H
 _includes/posts-tag.html,d\2\d245bf79a4e889c6f10b6d0c17e0da1b25276d44
@@ -224,3 +220,9 @@ T
 $_pages/categories/category-typing.md,d\8\d8aaec633b259ba2b2a848b24b3956832ebd5dbf
 M
 _posts/2023-10-20-linux003.md,c\7\c77a06fd957ac9ab3cf5be7c24f3c8f087e67e88
+N
+_posts/2023-10-21-jsprac003.md,c\7\c72530c93d390a72db078bf969f684e445386289
+N
+_posts/2023-10-21-typing001.md,2\7\274a50c770df04933a22ab952ecd5d4fb383290e
+B
+_posts/9999_typing,9\d\9ded310b1b8a8c70143e55e32a490f367db05241

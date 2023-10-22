@@ -99,7 +99,7 @@
       <ul>
         {% for category in site.categories %}
         {% if category[0] == "typing" %}
-        <li><a href="/categories/typing" class="">코드 쓰기 ({{category[1].size}})</a></li>
+        <li><a href="/categories/typing" class="">코딩 필사 ({{category[1].size}})</a></li>
         {% endif %}
         {% endfor %}
       </ul>
