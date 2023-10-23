@@ -254,8 +254,6 @@ M
 _posts/2023-10-19-linux002.md,5\4\54afed2ad2e8dd81e67f0a82f41100be8656ab33
 M
 _posts/2023-10-18-linux001.md,5\a\5a82ca0444eeb30e666ba06532bcce1fde3ef30a
->
-_posts/dddd.md,9\0\90ac323c945e54d54da20fa9339f6b184f75124c
 H
 _includes/posts-tag.html,d\2\d245bf79a4e889c6f10b6d0c17e0da1b25276d44
 H
@@ -274,3 +272,5 @@ N
 _posts/2023-10-21-jsprac003.md,c\7\c72530c93d390a72db078bf969f684e445386289
 B
 _posts/9999_typing,9\d\9ded310b1b8a8c70143e55e32a490f367db05241
+N
+_posts/2023-10-22-typing002.md,e\9\e95f9129f28296fb65e180e7464cb3e504a342ae
