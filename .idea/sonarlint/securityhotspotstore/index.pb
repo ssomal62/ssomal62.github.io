@@ -284,3 +284,9 @@ M
 _posts/2023-10-24-linux006.md,f\3\f3195f987bf06a701e04c782e22a572e2a5cfaa4
 M
 _posts/2023-10-24-linux007.md,5\5\5599ebde9358304064d775451ecffb565dfabc45
+M
+_posts/2023-10-25-linux008.md,4\d\4da01f4b1a60eee2d73c43839a637f19716dd15a
+M
+_posts/2023-10-26-linux009.md,5\9\597da6dbdc16be8c1921a2eec6847aecb312e2ce
+M
+_posts/2023-10-27-linux010.md,3\d\3d0e7bb3d642c2afee7b15fc71d270e4165170c1
