@@ -242,3 +242,5 @@ M
 _posts/2023-10-26-linux009.md,5\9\597da6dbdc16be8c1921a2eec6847aecb312e2ce
 M
 _posts/2023-10-27-linux010.md,3\d\3d0e7bb3d642c2afee7b15fc71d270e4165170c1
+N
+_posts/2023-10-28-typing004.md,6\1\612d99bddaed37ed2df23b183f7e3264942823bd
