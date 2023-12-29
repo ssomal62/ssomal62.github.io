@@ -1,5 +1,5 @@
 ---
-title: "JAVA 공부" # 게시물 클릭했을 때 리스트 상단에 보이는 제목
+title: "JAVA" # 게시물 클릭했을 때 리스트 상단에 보이는 제목
 layout: archive
 permalink: categories/java
 author_profile: true

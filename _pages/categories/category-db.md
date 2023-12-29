@@ -1,5 +1,5 @@
 ---
-title: "DB 공부" # 게시물 클릭했을 때 리스트 상단에 보이는 제목
+title: "DB" # 게시물 클릭했을 때 리스트 상단에 보이는 제목
 layout: archive
 permalink: categories/db
 author_profile: true
