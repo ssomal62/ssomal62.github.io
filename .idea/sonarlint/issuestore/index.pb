@@ -292,3 +292,15 @@ N
 _posts/2023-12-27-ncloud001.md,5\4\54a46c5656a080548917aad8edcd8b80e240af66
 N
 _posts/2023-12-28-ncloud002.md,0\e\0e100f53479f4646224ad8f249aafa6515fbb417
+;
+.travis.yml,d\e\dea01dd89a3b602828e630677fde5d77c06441c8
+L
+.github/workflows/bad-pr.yml,0\6\06e76e9db946543bba6523a99dd07ef8e9ae99fd
+W
+'_sass/minimal-mistakes/_navigation.scss,b\8\b8adbf10fa3c3876f017c52e7308e88605cc99c8
+V
+&_sass/minimal-mistakes/_utilities.scss,0\2\02b8a3bf626baef61462c69692855dfb5c4f2849
+T
+$_sass/minimal-mistakes/_sidebar.scss,1\5\155566edf58ff3b5a3882a9eb8d4e01a51f1ef31
+N
+_posts/2023-12-29-ncloud003.md,8\0\803390ee6bc6918950517ba7b2cbd86641447962
