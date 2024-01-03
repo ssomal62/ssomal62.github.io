@@ -23,20 +23,12 @@ K
 _sass/minimal-mistakes.scss,c\6\c64af4016a1cefd564b6137ac6ec175a5870dc62
 V
 &_sass/minimal-mistakes/_variables.scss,f\a\fa45adb7bd539ccac34483ad31bb3e491adde53c
-V
-&_pages/categories/category-javaprac.md,7\0\7083aa034300dd3a2d1d297f7d8a4a467a6a6bfb
 R
 "_pages/categories/category-cote.md,3\d\3ddf6eb14d0a863ae378fa21df2ef90a7c4044d3
 P
  _pages/categories/category-db.md,3\c\3c46e4d9a6832c5fb21cf452cc04916656a24d8e
-T
-$_pages/categories/category-osiete.md,6\e\6ea4e3ac053bcf7c2ab60f1842273709b00b6ec5
 P
  _pages/categories/category-js.md,e\4\e455e5aea8f2c023d32dda762941af5cbbfd338f
-T
-$_pages/categories/category-dbprac.md,0\a\0a2400ec376d93c019cda92a603e90874d1fcce8
-T
-$_pages/categories/category-jsprac.md,8\5\85d4cd534f25342e2866cb9688ece8a7ac1a3947
 C
 _includes/test.html,a\9\a996ec79d413ae89f5d199c247d9e2cb861402dd
 H
@@ -154,31 +146,13 @@ C
 L
 _posts/2023-10-02-sqrd002.md,c\5\c57b03b1a84930110bc419335efbde521707a93e
 G
-_posts/2023-09-10-01.md,c\8\c8b92c973c3bf4225d54f867f3259df285353b4a
-G
 _posts/2023-09-18-03.md,d\0\d0b740046d84264bb78cc4ffd66d17ba2ddbbd9f
-G
-_posts/2023-09-18-02.md,f\6\f6e47b56b93f5c58a5df5a5204597615aa27b258
-N
-_posts/2023-10-04-jsprac001.md,2\a\2adf7afc6cf2800e9346f9f9ae72e824b65b31cd
-J
-_posts/2023-10-05-js002.md,a\d\ad02004c0a46e23ab3fc7a355c0cc6bba43adf2e
 J
 _posts/2023-10-05-js003.md,e\b\eb46fd4017c7729d8ef87a705db34dd76e2b8b97
 J
 _posts/2023-10-06-js004.md,2\7\276edc69ffbf60beafdf3a816659e213c95c635a
 G
-_posts/2023-09-10-02.md,2\2\222727d1e343cbb9d2b1d50d13c57e4e3b724dbc
-G
-_posts/2023-09-11-01.md,2\9\2962bcb34cce6736e1de6613917770b4091a2d65
-G
-_posts/2023-09-22-01.md,c\7\c7ddb59efa1db6d86e78df847c3fcf7a01915ccf
-G
 _posts/2023-09-23-02.md,0\9\09f3331b1adef2f3f0fbf0162502b8c291d249bf
-G
-_posts/2023-09-24-01.md,6\8\6826451be680bf0fa854b3489dd44492f7986789
-G
-_posts/2023-09-24-02.md,c\3\c338683f142deabb54e37fcbb5578a381dc843fe
 L
 _posts/2023-10-08-cote002.md,0\a\0a26f6c046d6037e74902a3b619839c1d7020ac7
 J
@@ -194,10 +168,6 @@ H
 docs/_docs/10-layouts.md,3\3\336e768e1ebfce330ed998aa4f7409ad6fd11146
 J
 _posts/2023-10-16-js007.md,a\5\a573a4be3bf49dccaec6e9b1e78e21cb0dc15ee8
-N
-_posts/2023-10-16-jsprac002.md,3\2\3256d88a9d82f7836ef6e7fff9f3f488837f3ee3
-J
-_posts/2023-10-17-js008.md,0\a\0ad951fedc8fdf056b751d750f6f034e2944de62
 M
 _posts/2023-10-18-linux001.md,5\a\5a82ca0444eeb30e666ba06532bcce1fde3ef30a
 M
@@ -218,8 +188,6 @@ T
 $_pages/categories/category-typing.md,d\8\d8aaec633b259ba2b2a848b24b3956832ebd5dbf
 M
 _posts/2023-10-20-linux003.md,c\7\c77a06fd957ac9ab3cf5be7c24f3c8f087e67e88
-N
-_posts/2023-10-21-jsprac003.md,c\7\c72530c93d390a72db078bf969f684e445386289
 N
 _posts/2023-10-21-typing001.md,2\7\274a50c770df04933a22ab952ecd5d4fb383290e
 B
@@ -244,18 +212,10 @@ M
 _posts/2023-10-27-linux010.md,3\d\3d0e7bb3d642c2afee7b15fc71d270e4165170c1
 N
 _posts/2023-10-28-typing004.md,6\1\612d99bddaed37ed2df23b183f7e3264942823bd
-J
-_posts/2023-10-30-js009.md,5\7\57029b0eafc591845ecf9b47b8872ad0e5024508
-M
-_posts/2023-10-30-study007.md,e\1\e17060fefc492989dc6ca9b9905812c28a589dd0
 M
 _posts/2023-10-30-study009.md,f\c\fc0da3d27b9545a59da3259225b88bd0d585100d
 M
 _posts/2023-10-30-study008.md,6\f\6f170da83db4d8e3eff3364c32386d1f6e0426bb
-M
-_posts/2023-10-31-study010.md,6\5\657a64e2696ab41d484a2eee5d423a4e3a1ce397
-M
-_posts/2023-11-02-study011.md,3\8\38ebfe531cba9d965f8aa16ab8e0504135d5a963
 N
 _posts/2023-11-08-spring001.md,6\2\622a219481e557549b8d98b8bda4b87c2ce401a0
 N
@@ -304,3 +264,47 @@ T
 $_sass/minimal-mistakes/_sidebar.scss,1\5\155566edf58ff3b5a3882a9eb8d4e01a51f1ef31
 N
 _posts/2023-12-29-ncloud003.md,8\0\803390ee6bc6918950517ba7b2cbd86641447962
+D
+_data/navigation.yml,2\b\2be422aeee711340aaa5e49cef05cf00d2df950a
+7
+test.js,2\d\2d408aaa5a340d732402a346a7f915ed8a3d8a04
+F
+_includes/sidebar.html,7\3\7331b7fd85021c9ac41e5cc8a5355f5781b56b8c
+Q
+!_posts/2023-09-10-cleancode001.md,c\1\c113dbb97b1e5fbe730839378aa58ae0bcaaece7
+T
+$_pages/categories/category-ncloud.md,3\d\3d3aef55bbb31209000006e727bf0664676539b1
+T
+$_pages/categories/category-spring.md,9\9\99ece02d20ef6df937b1140b2dd58f2e4a805fc9
+X
+(_pages/categories/category-devroadmap.md,d\1\d1ccaca8c1b2624fb17e530fc7ab5c00b400b641
+L
+_posts/2023-09-10-java001.md,a\1\a1701a89ca79df88dd6fc92e7acb68fb3c7f688e
+L
+_posts/2023-09-11-java002.md,4\a\4aabdcbf76741a2e6b03d9de2c1efe6429e0e5ea
+M
+_posts/2023-11-02-study010.md,4\0\4084b1144553b954f83f3c14052b0257305a5bab
+J
+_posts/2023-09-18-js001.md,7\5\754e102faf369231ce6230d68a83cd4e3f4c50a7
+L
+_posts/2023-09-22-cote001.md,1\c\1c6376ddffedb73822a65eb34b28e10509b3cf06
+J
+_posts/2023-09-24-db001.md,0\d\0d4297662409a96d4a520dca4b2a6c4cfab9092c
+f
+6_sass/minimal-mistakes/vendor/breakpoint/_helpers.scss,7\6\76edbc82f952c35d02b3b9ab42182356b356d19f
+O
+_posts/2023-10-30-ncloud_lc1.md,c\a\ca83a437fba1359299b08aab8672e02bfdcdfad4
+O
+_posts/2023-10-31-ncloud_lc2.md,5\d\5d2b351fafb22ad59937b0ec30a2d0e7aaf27f70
+J
+_posts/2023-10-21-js010.md,4\0\4093e4b1863c06d5ea448b5e2d8dea692c29385b
+J
+_posts/2023-10-17-js009.md,3\2\32c59a44fc92c478a16761db25de545530fceef9
+J
+_posts/2023-10-16-js008.md,b\5\b50106936a75bc945225d03956b795aa67e15857
+J
+_posts/2023-09-24-db002.md,a\2\a2ac44f9ad79a1970652a02a8499e369ad591350
+J
+_posts/2023-10-04-js002.md,2\5\2591dd1bd23f35bd2024f8c88700dd9b7e90c70b
+M
+_posts/2023-10-05-study007.md,d\c\dcc8294b95b8ec9eb263a543feab2e7e404bc3de
