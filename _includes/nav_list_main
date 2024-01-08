@@ -47,6 +47,13 @@
       </ul>
       <ul>
         {% for category in site.categories %}
+        {% if category[0] == "springboot" %}
+        <li><a href="/categories/springboot" className="">SpringBoot ({{category[1].size}})</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      <ul>
+        {% for category in site.categories %}
         {% if category[0] == "linux" %}
         <li><a href="/categories/linux" class="">Linux ({{category[1].size}})</a></li>
         {% endif %}
@@ -68,13 +75,13 @@
         {% endif %}
         {% endfor %}
       </ul>
-          <ul>
-            {% for category in site.categories %}
-            {% if category[0] == "devroadmap" %}
-            <li><a href="/categories/devroadmap" class="">Dev rodeMap ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %}
-          </ul>
+      <ul>
+        {% for category in site.categories %}
+        {% if category[0] == "devroadmap" %}
+        <li><a href="/categories/devroadmap" class="">Dev rodeMap ({{category[1].size}})</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
       <ul>
         {% for category in site.categories %}
         {% if category[0] == "typing" %}
