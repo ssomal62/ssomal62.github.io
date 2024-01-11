@@ -1,4 +1,27 @@
+<style>
+  .sidebar.sticky {
+    overflow: hidden;
+  }
+</style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidebar = document.querySelector('.sidebar.sticky');
+
+    sidebar.addEventListener('wheel', function(event) {
+
+      var delta = event.deltaY || event.detail || event.wheelDelta;
+      if (delta > 0) {
+
+        sidebar.scrollTop += 50;
+      } else {
+
+        sidebar.scrollTop -= 50;
+      }
+      event.preventDefault();
+    });
+  });
+</script>
 
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
