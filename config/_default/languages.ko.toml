@@ -7,7 +7,7 @@ title = "nuuv blog"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 [params]
-  dateFormat = "2006-06-02"
+  dateFormat = "2006-01-02"
 
   # mainSections = ["section1", "section2"]
   # description = "My awesome website"
