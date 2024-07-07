@@ -1,4 +1,4 @@
-module github.com/ssomal62/hugo_blog
+module github.com/ssomal62/ssomal62.github.io
 
 go 1.22.5
 
