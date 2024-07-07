@@ -75,11 +75,11 @@ title: "Tech Showcase"
 
 {{< alert "comment">}}
 체리웨더는 날씨, 커뮤니티, AI 결합 서비스입니다.<br>
-[️[→ 프로젝트 상세 보기]](/about/cherryweather)
+[️[→ 프로젝트 상세 보기]](/about/cw)
 
 {{</ alert >}}
 
-[![cherry](cherryweather/cherry.jpg)](/about/cherryweather)
+[![cherry](cw/cherry.jpg)](/about/cw)
 
 ---
 
@@ -87,9 +87,9 @@ title: "Tech Showcase"
 
 {{< alert "comment">}}
 옐로우보드는 블로그형 커뮤니티 서비스입니다.<br>
-[️[→ 프로젝트 상세 보기]](/about/cherryweather)
+[️[→ 프로젝트 상세 보기]](/about/yb)
 {{</ alert >}}
 
-[![yellow](yellowboard/yellow.jpg)](/about/yellowboard)
+[![yellow](yb/yellow.jpg)](/about/yb)
 
 

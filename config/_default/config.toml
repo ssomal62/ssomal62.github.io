@@ -15,7 +15,7 @@ languageCode = "ko"
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-mainSections = ["devl", "posts"]
+mainSections = ["devl", "posts", "about"]
 
 [params.list]
 groupByYear = true
