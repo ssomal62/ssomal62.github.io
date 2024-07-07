@@ -1,0 +1,3 @@
+baseURL = 'https://example.org/'
+languageCode = 'ko-kr'
+title = 'nuuv Blog'

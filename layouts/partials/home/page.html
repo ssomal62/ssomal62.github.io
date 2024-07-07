@@ -1,0 +1,60 @@
+<article class="prose max-w-full dark:prose-invert mb-12">
+    {{ with .Title }}
+    <header>
+        <h1>{{ . | emojify }}</h1>
+    </header>
+    {{ end }}
+    <section>{{ .Content | emojify }}</section>
+</article>
+
+{{ $keywords := slice "eureka" "codingtest" "troubleshooting"}} <!-- 여기에 원하는 키워드를 추가하세요 -->
+{{ range $keyword := $keywords }}
+<section class="flex justify-between items-start mb-12">
+    <!-- 왼쪽: 키워드 이미지 -->
+    <div style="width: 23%; flex-shrink: 0;">
+        {{ $imagePath := printf "static/img/%s.jpg" $keyword }}
+        {{ if (fileExists $imagePath) }}
+        <img src="{{ printf "img/%s.jpg" $keyword | absURL }}" alt="{{ $keyword }} 이미지" class="w-full h-auto"
+        style="border-radius: 25px;">
+        {{ else }}
+        <div style="
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+        border-radius: 25px;
+        background: radial-gradient(circle, #4C1D95 60%, #722CBD 100%);">
+            <span class="keyword-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                {{ $keyword }}
+            </span>
+        </div>
+        {{ end }}
+    </div>
+    <!-- 오른쪽: 최신 게시물 -->
+    <div style="width: 77%; padding-left: 2rem;">
+            {{ $pages := where $.Site.RegularPages "Type" "in" $.Site.Params.mainSections | intersect (where $.Site.RegularPages ".Params.tags" "intersect" (slice $keyword)) }}
+            {{ $sortedPages := sort $pages "Date" "desc" }}
+            {{ $latestPages := first 3 $sortedPages }}
+
+            {{ if $latestPages }}
+            {{ range $latestPages }}
+            <article class="mb-6 flex flex-row">
+                <div class="flex justify-center items-center mr-2">
+                    <span style="font-family: 'Concert One'; font-size: 35pt; color: #5F3AFF">|</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <time class="text-sm text-neutral-400" datetime="{{ .Date.Format "2006-01-02" }}" >{{ .Date.Format "2006-01-02" }}</time>
+                </div>
+            </article>
+            {{ end }}
+            {{ else }}
+            <p class="text-xl">태그 '{{ $keyword }}'와 관련된 게시물을 찾을 수 없습니다.</p>
+            {{ end }}
+    </div>
+</section>
+{{ end }}
+
+<hr style="color: #7c3aed"/>
+<section>
+    {{ partial "recent-articles.html" . }}
+</section>

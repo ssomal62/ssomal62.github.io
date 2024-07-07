@@ -1,0 +1,52 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+}
+
+h1, h2{
+    /*font-family: "Concert One", "Pretendard";*/
+}
+
+button, input, optgroup, select, textarea {
+    font-family: "Pretendard", sans-serif;
+}
+
+code, kbd, samp, pre {
+    font-family: "JetBrains Mono", "Pretendard", sans-serif;
+    font-weight: 300;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    font-size: 1em
+}
+
+.keyword-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 800;
+    font-size: 24px;
+    text-align: center;
+    width: 90%;
+    overflow-wrap: break-word;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .keyword-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .keyword-text {
+        font-size: 14px;
+    }
+}
