@@ -79,7 +79,7 @@ title: "Tech Showcase"
 
 {{</ alert >}}
 
-[![cherry](cw/cherry.jpg)](/about/cw)
+[![cover](cw/cover.jpg)](/about/cw)
 
 ---
 
@@ -90,6 +90,6 @@ title: "Tech Showcase"
 [️[→ 프로젝트 상세 보기]](/about/yb)
 {{</ alert >}}
 
-[![yellow](yb/yellow.jpg)](/about/yb)
+[![cover](yb/cover.jpg)](/about/yb)
 
 
