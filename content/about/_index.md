@@ -79,7 +79,7 @@ title: "Tech Showcase"
 
 {{</ alert >}}
 
-[![cherryweather](cherryweather/cover.jpg)](/about/cherryweather)
+[![cherry](cherryweather/cherry.jpg)](/about/cherryweather)
 
 ---
 
@@ -90,6 +90,6 @@ title: "Tech Showcase"
 [️[→ 프로젝트 상세 보기]](/about/cherryweather)
 {{</ alert >}}
 
-[![yellowboard](yellowboard/yellowboard.jpg)](/about/yellowboard)
+[![yellow](yellowboard/yellow.jpg)](/about/yellowboard)
 
 
