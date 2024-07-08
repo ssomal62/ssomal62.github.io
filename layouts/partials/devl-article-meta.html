@@ -13,10 +13,10 @@
 
 {{/* Gather partials for this context */}}
 {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-{{ $meta.Add "partials" (slice (partial "meta/date.html" .Date.Format "2006-01-02")) }}
+{{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
 {{ end }}
 
-{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial "functions/date.html" .Date.Format "2006-01-02") (partial "functions/date.html" .Lastmod)) }}
+{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
 {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
 {{ end }}
 
@@ -32,8 +32,9 @@
 {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
 {{ end }}
 
+<div class="meta-container flex flex-row">
 
-<div class="flex flex-row flex-wrap items-center">
+<div class="flex flex-row flex-wrap items-center mr-2">
     {{/* Output partials */}}
     {{ with ($meta.Get "partials") }}
     {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
@@ -65,3 +66,4 @@
 </div>
 {{ end }}
 {{ end }}
+</div>

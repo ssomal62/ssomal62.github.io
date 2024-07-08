@@ -1,11 +1,12 @@
-<article class="mt-4 flex max-w-prose flex-row items-center border-b border-neutral-200 pb-4 dark:border-neutral-700">
-    <div class="flex-grow">
+<article class="mt-4 flex max-w-prose flex-row items-center border-b border-neutral-200 pb-3 dark:border-neutral-700">
+    <div style="margin-right: 20px">
         <a class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
             href="{{ .RelPermalink }}">
-            <span class="text-xl font-semibold">{{ .Title | emojify }}</span>
+            <span class="text-lg">{{ .Title | emojify }}</span>
         </a>
     </div>
-    <div class="flex-shrink-0 ml-4 text-sm text-neutral-500 dark:text-neutral-400">
-        {{ .Date.Format "2006-01-02" }}
+
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        {{ partial "devl-article-meta.html" . }}
     </div>
 </article>
