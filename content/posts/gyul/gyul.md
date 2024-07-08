@@ -7,12 +7,11 @@ categories : [ ]
 tags : [  ]
 ---
 
-![귤](../../assets/images/gyul.png)
 
 
 ### 이름 : 귤
 
-### 나이 : 10살
+### 나이 : 11살
 
 ### MBTI : (아마도) ISTJ
   * 혼자있는 거 좋아함.
