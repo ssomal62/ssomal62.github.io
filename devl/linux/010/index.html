@@ -1,0 +1,306 @@
+<!doctype html><html lang=ko dir=ltr class=scroll-smooth data-default-appearance=dark data-auto-appearance=true><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#ffffff"><title>linux 기초 Day08 &#183; nuuv blog</title>
+<meta name=title content="linux 기초 Day08 &#183; nuuv blog"><script type=text/javascript src=/js/appearance.min.74ad8406faea02f3e186ba5126249aaeed9073629e04b05037b903396b188724.js integrity="sha256-dK2EBvrqAvPhhrpRJiSaru2Qc2KeBLBQN7kDOWsYhyQ="></script><link type=text/css rel=stylesheet href=/css/main.bundle.min.823ca3649b4275a2c6fc29a4195b6e1b526b122554193fba7c9bd0018b16f690.css integrity="sha256-gjyjZJtCdaLG/CmkGVtuG1JrEiVUGT+6fJvQAYsW9pA="><script defer type=text/javascript id=script-bundle src=/js/main.bundle.min.f4243e18b1f012d4086a1c8588e367983174063418141921d1fe6f6fdbfa6eca.js integrity="sha256-9CQ+GLHwEtQIahyFiONnmDF0BjQYFBkh0f5vb9v6bso=" data-copy=복사 data-copied=복사됨></script><meta name=description content="
+      
+        접속 시 루트 권한으로 바로 접속 # # PS2 : 프롬프트 상태를 묻는 것.
+      
+    "><link rel=canonical href=https://ssomal62.github.io/devl/linux/010/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=stylesheet as=style crossorigin href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Concert+One&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel=stylesheet><meta property="og:url" content="https://ssomal62.github.io/devl/linux/010/"><meta property="og:site_name" content="nuuv blog"><meta property="og:title" content="linux 기초 Day08"><meta property="og:description" content="접속 시 루트 권한으로 바로 접속 # # PS2 : 프롬프트 상태를 묻는 것."><meta property="og:locale" content="ko"><meta property="og:type" content="article"><meta property="article:section" content="devl"><meta property="article:published_time" content="2023-10-26T00:00:00+00:00"><meta property="article:modified_time" content="2023-10-26T00:00:00+00:00"><meta property="article:tag" content="Bitcamp"><meta property="article:tag" content="NaverCloudCamp"><meta name=twitter:card content="summary"><meta name=twitter:title content="linux 기초 Day08"><meta name=twitter:description content="접속 시 루트 권한으로 바로 접속 # # PS2 : 프롬프트 상태를 묻는 것."><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","articleSection":"Developer Course","name":"linux 기초 Day08","headline":"linux 기초 Day08","abstract":"접속 시 루트 권한으로 바로 접속 # # PS2 : 프롬프트 상태를 묻는 것.","inLanguage":"ko","url":"https:\/\/ssomal62.github.io\/devl\/linux\/010\/","author":{"@type":"Person","name":"nuuv"},"copyrightYear":"2023","dateCreated":"2023-10-26T00:00:00\u002b00:00","datePublished":"2023-10-26T00:00:00\u002b00:00","dateModified":"2023-10-26T00:00:00\u002b00:00","keywords":["bitcamp","naverCloudCamp"],"mainEntityOfPage":"true","wordCount":"1021"}</script><meta name=author content="nuuv"><link href=wxy890@gmail.com rel=me><link href=https://github.com/ssomal62 rel=me><link href=https://steamcommunity.com/profiles/userid rel=me></head><body class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"><div id=the-top class="absolute flex self-center"><a class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600" href=#main-content><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span>메인 콘텐츠로 이동하기</a></div><header class="py-6 font-semibold text-neutral-900 print:hidden sm:py-10 dark:text-neutral"><nav class="flex items-start justify-between sm:items-center"><div class="flex flex-row items-center"><a href=/ class=mr-2><img src=/img/logo.png width=1264 height=512 class="max-h-[10rem] object-scale-down object-left" alt="nuuv blog"></a></div><ul class="flex list-none flex-col text-end sm:flex-row"><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/posts/ title=posts><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">Blog</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/about/ title=about><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">About</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/devl/ title=DevLearn><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">DevLearn</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/categories/ title><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">Categories</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=https://github.com/ssomal62 title target=_blank><span class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><button id=search-button-1 title="검색 (/)">
+<span class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"></span></button></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><button id=appearance-switcher-1 type=button aria-label="appearance switcher">
+<span class="group-dark:hover:text-primary-400 inline transition-colors group-hover:text-primary-600 dark:hidden" title="다크 모드로 전환"><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"></span>
+</span><span class="group-dark:hover:text-primary-400 hidden transition-colors group-hover:text-primary-600 dark:inline" title="라이트 모드로 전환"><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"></span></span></button></li></ul></nav></header><div class="relative flex grow flex-col"><main id=main-content class=grow><article><header class=max-w-prose><ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden"><li class="hidden inline"><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=/>✨ Welcome to My Blog! ✨</a><span class="px-1 text-primary-500">/</span></li><li class=inline><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=/devl/>Developer Course</a><span class="px-1 text-primary-500">/</span></li><li class=inline><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=/devl/linux/>Linux</a><span class="px-1 text-primary-500">/</span></li><li class="hidden inline"><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=/devl/linux/010/>linux 기초 Day08</a><span class="px-1 text-primary-500">/</span></li></ol><h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">linux 기초 Day08</h1><div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden"><div class="flex flex-row flex-wrap items-center"><time datetime="2023-10-26 00:00:00 +0000 UTC">2023-10-26</time></div><div class="my-1 flex flex-wrap text-xs leading-relaxed text-neutral-500 dark:text-neutral-400"><a href=/categories/linux/ class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400">Linux</a>
+<a href=/tags/bitcamp/ class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400">Bitcamp</a>
+<a href=/tags/navercloudcamp/ class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400">NaverCloudCamp</a></div></div></header><section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row"><div class="order-first px-0 lg:order-last lg:max-w-xs lg:ps-8"><div class="toc pe-5 lg:sticky lg:top-10 print:hidden"><details open class="-ms-5 mt-0 overflow-hidden rounded-lg ps-5"><summary class="block cursor-pointer bg-neutral-100 py-1 ps-5 text-lg font-semibold text-neutral-800 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">목차</summary><div class="border-s border-dotted border-neutral-300 py-2 ps-5 dark:border-neutral-600"><nav id=TableOfContents><ul><li><ul><li><ul><li></li></ul></li></ul></li></ul></nav></div></details></div></div><div class="min-h-0 min-w-0 max-w-prose grow"><h4 id=접속-시-루트-권한으로-바로-접속 class="relative group">접속 시 루트 권한으로 바로 접속 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%ec%a0%91%ec%86%8d-%ec%8b%9c-%eb%a3%a8%ed%8a%b8-%ea%b6%8c%ed%95%9c%ec%9c%bc%eb%a1%9c-%eb%b0%94%eb%a1%9c-%ec%a0%91%ec%86%8d aria-label=앵커>#</a></span></h4><h4 id=heading class="relative group"><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#heading aria-label=앵커>#</a></span></h4><ul><li>PS2 : 프롬프트 상태를 묻는 것. 보조 프롬프트</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=nv>$PS2</span>
+</span></span><span class=line><span class=cl>  <span class=c1># ↑ 파란부분 주 프롬프트</span>
+</span></span></code></pre></div><h4 id=명령어를-찾는-디렉토리 class="relative group">명령어를 찾는 디렉토리 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%eb%aa%85%eb%a0%b9%ec%96%b4%eb%a5%bc-%ec%b0%be%eb%8a%94-%eb%94%94%eb%a0%89%ed%86%a0%eb%a6%ac aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# bbbb
+</span></span><span class=line><span class=cl>bbbb: 명령을 찾을 수 없습니다
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#패스 묻기</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=nv>$PATH</span>
+</span></span><span class=line><span class=cl>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+</span></span><span class=line><span class=cl>       <span class=c1># ↑명령을 찾는 각각의 폴더들. 명령을 치면 위 폴더에서 명령어를 찾아봄 </span>
+</span></span></code></pre></div><p>다시</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 1) 현재 디렉토리에 </span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ls
+</span></span><span class=line><span class=cl>my1.sh
+</span></span><span class=line><span class=cl>root@aiur:~/d8# my1.sh
+</span></span><span class=line><span class=cl>my1.sh: 명령을 찾을 수 없습니다
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2) 명령을 찾는 디렉토리 확인</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=nv>$PS1</span>
+</span></span><span class=line><span class=cl><span class=se>\[\e</span><span class=o>]</span>0<span class=p>;</span><span class=se>\u</span>@<span class=se>\h</span>: <span class=se>\w\a\]</span><span class=si>${</span><span class=nv>debian_chroot</span><span class=p>:+(</span><span class=nv>$debian_chroot</span><span class=p>)</span><span class=si>}</span><span class=se>\u</span>@<span class=se>\h</span>:<span class=se>\w\$</span>  <span class=c1># 현재 경로가 없음</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 3) 현재경로를 패스에 추가 </span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nv>PATH</span><span class=o>=</span><span class=nv>$PATH</span>:.
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=nv>$PATH</span>
+</span></span><span class=line><span class=cl>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# my1.sh
+</span></span><span class=line><span class=cl>-bash: ./my1.sh: 허가 거부
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# l
+</span></span><span class=line><span class=cl>합계 16K
+</span></span><span class=line><span class=cl>-rw------- <span class=m>1</span> root root 12K 10월 <span class=m>27</span> 10:22 .my1.sh.swp
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root root <span class=m>103</span> 10월 <span class=m>27</span> 10:22 my1.sh
+</span></span><span class=line><span class=cl>root@aiur:~/d8# bash my1.sh
+</span></span><span class=line><span class=cl>Shell Script Start
+</span></span><span class=line><span class=cl>user : root
+</span></span><span class=line><span class=cl>host : aiur
+</span></span><span class=line><span class=cl>PS1 :
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#실행 권한 추가하기</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# chmod +x my1.sh   <span class=c1># -x는 권한을 뺏는 명령어</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# my1.sh
+</span></span><span class=line><span class=cl>Shell Script Start
+</span></span><span class=line><span class=cl>user : root
+</span></span><span class=line><span class=cl>host : aiur
+</span></span><span class=line><span class=cl>PS1 :
+</span></span></code></pre></div><h4 id=my3sh-문서-편집해서-명령처리 class="relative group">my3.sh 문서 편집해서 명령처리 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#my3sh-%eb%ac%b8%ec%84%9c-%ed%8e%b8%ec%a7%91%ed%95%b4%ec%84%9c-%eb%aa%85%eb%a0%b9%ec%b2%98%eb%a6%ac aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># my3.sh 편집모드</span>
+</span></span><span class=line><span class=cl>  <span class=m>1</span> <span class=c1>#!/bin/bash</span>
+</span></span><span class=line><span class=cl>  <span class=m>2</span> <span class=k>if</span> <span class=o>[</span> ! -d /down2 <span class=o>]</span>     <span class=c1># -d(디렉토리) down2 폴더가 없으면 아래를 실행해라</span>
+</span></span><span class=line><span class=cl>  <span class=m>3</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>  <span class=m>4</span>     mkdir /down2
+</span></span><span class=line><span class=cl>  <span class=m>5</span> <span class=k>fi</span>
+</span></span><span class=line><span class=cl>  <span class=m>6</span> <span class=nb>cd</span> /down2
+</span></span><span class=line><span class=cl>  <span class=m>7</span>
+</span></span><span class=line><span class=cl>  <span class=m>8</span> ftp -np <span class=s2>&#34;ftp.kaist.ac.kr&#34;</span> <span class=s>&lt;&lt; E
+</span></span></span><span class=line><span class=cl><span class=s>  9 user &#34;ftp&#34;
+</span></span></span><span class=line><span class=cl><span class=s> 10 cd &#34;/apache/httpd&#34;
+</span></span></span><span class=line><span class=cl><span class=s> 11 get &#34;httpd-2.4.58.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=s> 12 by
+</span></span></span><span class=line><span class=cl><span class=s> 13 E</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 실행하기</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# chmod +x my3.sh
+</span></span><span class=line><span class=cl>root@aiur:~/d8# my3.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 다운 확인하기</span>
+</span></span><span class=line><span class=cl>root@aiur:~/down# ls /down2/
+</span></span><span class=line><span class=cl>httpd-2.4.58.tar.gz
+</span></span></code></pre></div><h4 id=cmd class="relative group">cmd <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#cmd aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>c:<span class=se>\d</span>d&gt;copy con my.bat
+</span></span><span class=line><span class=cl>mkdir c:/dd/dd100
+</span></span><span class=line><span class=cl>calc
+</span></span><span class=line><span class=cl>mspaint
+</span></span><span class=line><span class=cl>notepad
+</span></span><span class=line><span class=cl>        1개 파일이 복사되었습니다. <span class=c1>#ctrl + c</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 디렉토리 경로 들어가서 my.bat 실행</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# seq <span class=m>3</span>
+</span></span><span class=line><span class=cl><span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=m>2</span>
+</span></span><span class=line><span class=cl><span class=m>3</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# seq <span class=m>5</span> <span class=m>7</span>
+</span></span><span class=line><span class=cl><span class=m>5</span>
+</span></span><span class=line><span class=cl><span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=m>7</span>
+</span></span><span class=line><span class=cl>root@
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# seq <span class=m>2</span> <span class=m>2</span> <span class=m>10</span>
+</span></span><span class=line><span class=cl><span class=m>2</span>
+</span></span><span class=line><span class=cl><span class=m>4</span>
+</span></span><span class=line><span class=cl><span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=m>8</span>
+</span></span><span class=line><span class=cl><span class=m>10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# seq <span class=m>5</span> <span class=m>5</span> <span class=m>100</span> <span class=p>|</span> column
+</span></span><span class=line><span class=cl><span class=m>5</span>       <span class=m>15</span>      <span class=m>25</span>      <span class=m>35</span>      <span class=m>45</span>      <span class=m>55</span>      <span class=m>65</span>      <span class=m>75</span>      <span class=m>85</span>      <span class=m>95</span>
+</span></span><span class=line><span class=cl><span class=m>10</span>      <span class=m>20</span>      <span class=m>30</span>      <span class=m>40</span>      <span class=m>50</span>      <span class=m>60</span>      <span class=m>70</span>      <span class=m>80</span>      <span class=m>90</span>      <span class=m>100</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# seq <span class=m>5</span> <span class=m>5</span> <span class=m>100</span> <span class=p>|</span> paste - - -
+</span></span><span class=line><span class=cl><span class=m>5</span>       <span class=m>10</span>      <span class=m>15</span>
+</span></span><span class=line><span class=cl><span class=m>20</span>      <span class=m>25</span>      <span class=m>30</span>
+</span></span><span class=line><span class=cl><span class=m>35</span>      <span class=m>40</span>      <span class=m>45</span>
+</span></span><span class=line><span class=cl><span class=m>50</span>      <span class=m>55</span>      <span class=m>60</span>
+</span></span><span class=line><span class=cl><span class=m>65</span>      <span class=m>70</span>      <span class=m>75</span>
+</span></span><span class=line><span class=cl><span class=m>80</span>      <span class=m>85</span>      <span class=m>90</span>
+</span></span><span class=line><span class=cl><span class=m>95</span>      <span class=m>100</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -b 빌트인 명령어</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>compgen</span> -b <span class=p>|</span> paste - - - - 
+</span></span><span class=line><span class=cl>.       :       <span class=o>[</span>       <span class=nb>alias</span>
+</span></span><span class=line><span class=cl><span class=nb>bg</span>      <span class=nb>bind</span>    <span class=nb>break</span>   <span class=nb>builtin</span>
+</span></span><span class=line><span class=cl><span class=nb>caller</span>  <span class=nb>cd</span>      <span class=nb>command</span> <span class=nb>compgen</span>
+</span></span><span class=line><span class=cl><span class=nb>complete</span>        compopt <span class=k>continue</span>        <span class=nb>declare</span>
+</span></span><span class=line><span class=cl><span class=nb>dirs</span>    <span class=nb>disown</span>  <span class=nb>echo</span>    <span class=nb>enable</span>
+</span></span><span class=line><span class=cl><span class=nb>eval</span>    <span class=nb>exec</span>    <span class=nb>exit</span>    <span class=nb>export</span>
+</span></span><span class=line><span class=cl><span class=nb>false</span>   <span class=nb>fc</span>      <span class=nb>fg</span>      <span class=nb>getopts</span>
+</span></span><span class=line><span class=cl><span class=nb>hash</span>    <span class=nb>help</span>    <span class=nb>history</span> <span class=nb>jobs</span>
+</span></span><span class=line><span class=cl><span class=nb>kill</span>    <span class=nb>let</span>     <span class=nb>local</span>   <span class=nb>logout</span>
+</span></span><span class=line><span class=cl>mapfile <span class=nb>popd</span>    <span class=nb>printf</span>  <span class=nb>pushd</span>
+</span></span><span class=line><span class=cl><span class=nb>pwd</span>     <span class=nb>read</span>    readarray       <span class=nb>readonly</span>
+</span></span><span class=line><span class=cl><span class=k>return</span>  <span class=nb>set</span>     <span class=nb>shift</span>   <span class=nb>shopt</span>
+</span></span><span class=line><span class=cl><span class=nb>source</span>  <span class=nb>suspend</span> <span class=nb>test</span>    <span class=nb>times</span>
+</span></span><span class=line><span class=cl><span class=nb>trap</span>    <span class=nb>true</span>    <span class=nb>type</span>    <span class=nb>typeset</span>
+</span></span><span class=line><span class=cl><span class=nb>ulimit</span>  <span class=nb>umask</span>   <span class=nb>unalias</span> <span class=nb>unset</span>
+</span></span><span class=line><span class=cl><span class=nb>wait</span>
+</span></span></code></pre></div><h4 id=사용자-50명-만들기 class="relative group">사용자 50명 만들기 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%ec%82%ac%ec%9a%a9%ec%9e%90-50%eb%aa%85-%eb%a7%8c%eb%93%a4%ea%b8%b0 aria-label=앵커>#</a></span></h4><ul><li>autouseradd.sh 파일 편집</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>  <span class=m>1</span> <span class=c1>#자동으로 유저 50명 만들기</span>
+</span></span><span class=line><span class=cl>  <span class=m>2</span>
+</span></span><span class=line><span class=cl>  <span class=m>3</span> <span class=c1>#!/bin/bash</span>
+</span></span><span class=line><span class=cl>  <span class=m>4</span>
+</span></span><span class=line><span class=cl>  <span class=m>5</span> <span class=k>for</span> i in <span class=sb>`</span>seq 50<span class=sb>`</span>
+</span></span><span class=line><span class=cl>  <span class=m>6</span>     <span class=k>do</span>
+</span></span><span class=line><span class=cl>  <span class=m>7</span>         useradd m<span class=nv>$i</span>
+</span></span><span class=line><span class=cl>  <span class=m>8</span>         passwd m<span class=nv>$i</span> <span class=s>&lt;&lt; END
+</span></span></span><span class=line><span class=cl><span class=s>  9 1    # 패스워드 입력하는 부분
+</span></span></span><span class=line><span class=cl><span class=s> 10 1    # 패스워드 입력하는 부분
+</span></span></span><span class=line><span class=cl><span class=s> 11 END</span>
+</span></span><span class=line><span class=cl> <span class=m>12</span> <span class=k>done</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# ls
+</span></span><span class=line><span class=cl>autouseradd.sh  httpd-2.4.58.tar.gz  my1.sh  my2.sh  my3.sh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# chmod +x autouseradd.sh
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ./autouseradd.sh
+</span></span><span class=line><span class=cl>새 암호: 새 암호 다시 입력: passwd: 암호를 성공적으로 업데이트했습니다
+</span></span><span class=line><span class=cl>새 암호: 새 암호 다시 입력: passwd: 암호를 성공적으로 업데이트했습니다
+</span></span><span class=line><span class=cl>새 암호: 새 암호 다시 입력: passwd: 암호를 성공적으로 업데이트했습니다
+</span></span><span class=line><span class=cl>...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 결과확인 </span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ls /home
+</span></span><span class=line><span class=cl>j           m11  m15  m19  m22  m26  m3   m33  m37  m40  m44  m48  m6  wa
+</span></span><span class=line><span class=cl>lost+found  m12  m16  m2   m23  m27  m30  m34  m38  m41  m45  m49  m7  wa2
+</span></span><span class=line><span class=cl>m1          m13  m17  m20  m24  m28  m31  m35  m39  m42  m46  m5   m8
+</span></span><span class=line><span class=cl>m10         m14  m18  m21  m25  m29  m32  m36  m4   m43  m47  m50  m9
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# nl /etc/passwd
+</span></span><span class=line><span class=cl>...
+</span></span><span class=line><span class=cl>    <span class=m>44</span>  m1❌1003:1003::/home/m1:/bin/bash
+</span></span><span class=line><span class=cl>    <span class=m>45</span>  m2❌1004:1004::/home/m2:/bin/bash
+</span></span><span class=line><span class=cl>    <span class=m>46</span>  m3❌1005:1005::/home/m3:/bin/bash
+</span></span><span class=line><span class=cl>    <span class=m>47</span>  m4❌1006:1006::/home/m4:/bin/bash
+</span></span><span class=line><span class=cl>    <span class=m>48</span>  m5❌1007:1007::/home/m5:/bin/bash
+</span></span><span class=line><span class=cl>    <span class=m>49</span>  m6❌1008:1008::/home/m6:/bin/bash
+</span></span></code></pre></div><h4 id=방금-만든-유저-모두-삭제 class="relative group">방금 만든 유저 모두 삭제 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%eb%b0%a9%ea%b8%88-%eb%a7%8c%eb%93%a0-%ec%9c%a0%ec%a0%80-%eb%aa%a8%eb%91%90-%ec%82%ad%ec%a0%9c aria-label=앵커>#</a></span></h4><ul><li>userautodel.sh 파일 편집</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>  <span class=m>1</span> <span class=c1>#자동으로 유저 50 삭제하기</span>
+</span></span><span class=line><span class=cl>  <span class=m>2</span>
+</span></span><span class=line><span class=cl>  <span class=m>3</span> <span class=c1>#!/bin/bash</span>
+</span></span><span class=line><span class=cl>  <span class=m>4</span>
+</span></span><span class=line><span class=cl>  <span class=m>5</span> <span class=k>for</span> i in <span class=sb>`</span>seq 50<span class=sb>`</span>
+</span></span><span class=line><span class=cl>  <span class=m>6</span>     <span class=k>do</span>
+</span></span><span class=line><span class=cl>  <span class=m>7</span>         userdel -r m<span class=nv>$i</span> <span class=s>&lt;&lt; END
+</span></span></span><span class=line><span class=cl><span class=s>  8
+</span></span></span><span class=line><span class=cl><span class=s>  9 END</span>
+</span></span><span class=line><span class=cl> <span class=m>10</span> <span class=k>done</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# chmod +x userautodel.sh
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ./userautodel.sh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 결과 확인</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ls /home
+</span></span><span class=line><span class=cl>j  lost+found  wa  wa2
+</span></span></code></pre></div><h4 id=시스템-전체에서--찾기 class="relative group">시스템 전체에서 찾기 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%ec%8b%9c%ec%8a%a4%ed%85%9c-%ec%a0%84%ec%b2%b4%ec%97%90%ec%84%9c--%ec%b0%be%ea%b8%b0 aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>wa2@aiur:~$ find / -name *.c
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wa2@aiur:~$ find /var -type  <span class=m>2</span> &gt;/dev/null
+</span></span></code></pre></div><h4 id=표준-입출력 class="relative group">표준 입출력 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%ed%91%9c%ec%a4%80-%ec%9e%85%ec%b6%9c%eb%a0%a5 aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wa2@aiur:~$ cal 1&gt; a1
+</span></span><span class=line><span class=cl>wa2@aiur:~$ cal 2&gt; a1
+</span></span><span class=line><span class=cl>      10월 <span class=m>2023</span>
+</span></span><span class=line><span class=cl>일 월 화 수 목 금 토
+</span></span><span class=line><span class=cl> <span class=m>1</span>  <span class=m>2</span>  <span class=m>3</span>  <span class=m>4</span>  <span class=m>5</span>  <span class=m>6</span>  <span class=m>7</span>
+</span></span><span class=line><span class=cl> <span class=m>8</span>  <span class=m>9</span> <span class=m>10</span> <span class=m>11</span> <span class=m>12</span> <span class=m>13</span> <span class=m>14</span>
+</span></span><span class=line><span class=cl><span class=m>15</span> <span class=m>16</span> <span class=m>17</span> <span class=m>18</span> <span class=m>19</span> <span class=m>20</span> <span class=m>21</span>
+</span></span><span class=line><span class=cl><span class=m>22</span> <span class=m>23</span> <span class=m>24</span> <span class=m>25</span> <span class=m>26</span> <span class=m>27</span> <span class=m>28</span>
+</span></span><span class=line><span class=cl><span class=m>29</span> <span class=m>30</span> <span class=m>31</span>
+</span></span></code></pre></div><p>stdin 0
+stdout 1
+stderr 2</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>wa2@aiur:~$ sddkfh 2&gt; a3
+</span></span><span class=line><span class=cl>wa2@aiur:~$ nl a3
+</span></span><span class=line><span class=cl>     <span class=m>1</span>  sddkfh: 명령을 찾을 수 없습니다
+</span></span><span class=line><span class=cl>wa2@aiur:~$ sddkfh 2&gt;<span class=p>&amp;</span><span class=m>1</span> a3
+</span></span><span class=line><span class=cl>sddkfh: 명령을 찾을 수 없습니다
+</span></span><span class=line><span class=cl>wa2@aiur:~$ sddkfh 2&gt;<span class=p>&amp;</span><span class=m>1</span> a4
+</span></span><span class=line><span class=cl>sddkfh: 명령을 찾을 수 없습니다
+</span></span><span class=line><span class=cl>wa2@aiur:~$ nl a4
+</span></span><span class=line><span class=cl>nl: a4: 그런 파일이나 디렉터리가 없습니다
+</span></span><span class=line><span class=cl>wa2@aiur:~$ sddkfh 1&gt;<span class=p>&amp;</span><span class=m>2</span> a5
+</span></span><span class=line><span class=cl>sddkfh: 명령을 찾을 수 없습니다
+</span></span><span class=line><span class=cl>wa2@aiur:~$ nl a5
+</span></span><span class=line><span class=cl>nl: a5: 그런 파일이나 디렉터리가 없습니다
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>wa2@aiur:~$ asdldfkj 2&gt;a7  
+</span></span><span class=line><span class=cl>wa2@aiur:~$ asdldfkj 2&gt;/dev/null <span class=c1>#에러를 쓰레기통으로 직행</span>
+</span></span><span class=line><span class=cl>wa2@aiur:~$ nl a7
+</span></span><span class=line><span class=cl>     <span class=m>1</span>  asdldfkj: 명령을 찾을 수 없습니다
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>  <span class=m>1</span> <span class=c1>#!/bin/bash</span>
+</span></span><span class=line><span class=cl>  <span class=m>2</span> <span class=k>if</span> <span class=o>[</span> <span class=m>40</span> -eq <span class=m>30</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl>  <span class=m>3</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>  <span class=m>4</span>     <span class=nb>echo</span> <span class=s2>&#34;equal &#34;</span>
+</span></span><span class=line><span class=cl>  <span class=m>5</span> <span class=k>else</span>
+</span></span><span class=line><span class=cl>  <span class=m>6</span>     <span class=nb>echo</span> <span class=s2>&#34;Not equal &#34;</span>
+</span></span><span class=line><span class=cl>  <span class=m>7</span> <span class=k>fi</span>
+</span></span><span class=line><span class=cl>  <span class=m>8</span>
+</span></span><span class=line><span class=cl>  <span class=m>9</span> <span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;kkk&#34;</span> <span class=o>==</span> <span class=s2>&#34;kkk&#34;</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl> <span class=m>10</span>     <span class=k>then</span>
+</span></span><span class=line><span class=cl> <span class=m>11</span>         <span class=nb>echo</span> <span class=s2>&#34;같음&#34;</span>
+</span></span><span class=line><span class=cl> <span class=m>12</span>     <span class=k>else</span>
+</span></span><span class=line><span class=cl> <span class=m>13</span>         <span class=nb>echo</span> <span class=s2>&#34;같지 않음&#34;</span>
+</span></span><span class=line><span class=cl> <span class=m>14</span> <span class=k>fi</span>
+</span></span><span class=line><span class=cl> <span class=m>15</span>
+</span></span><span class=line><span class=cl> <span class=m>16</span>
+</span></span><span class=line><span class=cl> <span class=m>17</span> <span class=k>if</span> <span class=o>[</span> -d /etc <span class=o>]</span> <span class=c1>#디렉토리인지 확인, -f 파일인지 확인</span>
+</span></span><span class=line><span class=cl> <span class=m>18</span>     <span class=k>then</span>
+</span></span><span class=line><span class=cl> <span class=m>19</span>         <span class=nb>echo</span> <span class=s2>&#34;디렉토리입니다.&#34;</span>
+</span></span><span class=line><span class=cl> <span class=m>20</span>     <span class=k>else</span>
+</span></span><span class=line><span class=cl> <span class=m>21</span>         <span class=nb>echo</span> <span class=s2>&#34;디렉토리가 아닙니다.&#34;</span>
+</span></span><span class=line><span class=cl> <span class=m>22</span> <span class=k>fi</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# k.sh
+</span></span><span class=line><span class=cl>Not equal
+</span></span><span class=line><span class=cl>같음
+</span></span><span class=line><span class=cl>디렉토리입니다.
+</span></span></code></pre></div><h4 id=trap class="relative group">trap <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#trap aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>trap</span> <span class=s1>&#39;echo &#34;오늘은 날씨가 좋다&#34; &gt;./tt8&#39;</span> INT <span class=c1>#인터럽터를 했을 때! (컨트롤 + c)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ls
+</span></span><span class=line><span class=cl>autouseradd.sh  bb.c  my1.sh  my3.sh          y1  y3  y5
+</span></span><span class=line><span class=cl>bb              k.sh  my2.sh  userautodel.sh  y2  y4
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ^C <span class=c1>#인터럽터를 실행함</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ls
+</span></span><span class=line><span class=cl>autouseradd.sh  bb.c  my1.sh  my3.sh  userautodel.sh  y2  y4
+</span></span><span class=line><span class=cl>bb              k.sh  my2.sh  tt8     y1              y3  y5  <span class=c1># tt8이 생김</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# ff<span class=o>()</span>
+</span></span><span class=line><span class=cl>&gt; <span class=o>{</span>
+</span></span><span class=line><span class=cl>&gt; <span class=nb>echo</span> <span class=s2>&#34;난 함수다...&#34;</span>
+</span></span><span class=line><span class=cl>&gt; <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# ff
+</span></span><span class=line><span class=cl>난 함수다...
+</span></span></code></pre></div><h4 id=변수-확장 class="relative group">변수 확장 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%eb%b3%80%ec%88%98-%ed%99%95%ec%9e%a5 aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# <span class=nv>g</span><span class=o>=</span><span class=s2>&#34;google&#34;</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=nv>$g</span>
+</span></span><span class=line><span class=cl>google
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=s1>&#39;$g&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>$g</span>
+</span></span><span class=line><span class=cl>root@aiur:~/d8# <span class=nb>echo</span> <span class=s2>&#34;</span><span class=nv>$g</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>google
+</span></span><span class=line><span class=cl>root@aiur:~/d8#
+</span></span></code></pre></div><h4 id=ls-색-없이-출력하기 class="relative group">ls 색 없이 출력하기 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#ls-%ec%83%89-%ec%97%86%ec%9d%b4-%ec%b6%9c%eb%a0%a5%ed%95%98%ea%b8%b0 aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~/d8# <span class=se>\l</span>s
+</span></span></code></pre></div><h4 id=정규표현식 class="relative group">정규표현식 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%ec%a0%95%ea%b7%9c%ed%91%9c%ed%98%84%ec%8b%9d aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~# nl p3
+</span></span><span class=line><span class=cl>     <span class=m>1</span>  <span class=m>22</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>     <span class=m>2</span>  <span class=m>33</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>     <span class=m>3</span>  <span class=m>55</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~# sed -n <span class=s1>&#39;/^$/p&#39;</span> p3 <span class=c1># 공백만 출력해라</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>root@aiur:~# sed -n <span class=s1>&#39;/22/p&#39;</span> p3 <span class=c1># 22만 출력해라</span>
+</span></span><span class=line><span class=cl><span class=m>22</span>
+</span></span><span class=line><span class=cl>root@aiur:~# sed -n <span class=s1>&#39;/root/p&#39;</span> p     <span class=c1>#/root/p &lt; 프린트의 p</span>
+</span></span><span class=line><span class=cl>root❌0:0:root:/root:/bin/bash
+</span></span></code></pre></div><h4 id=-i-원본에서-지우기 class="relative group"><code>-i</code> 원본에서 지우기 <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#-i-%ec%9b%90%eb%b3%b8%ec%97%90%ec%84%9c-%ec%a7%80%ec%9a%b0%ea%b8%b0 aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@aiur:~# grep Indexes apache2.conf
+</span></span><span class=line><span class=cl><span class=c1>#       Options Indexes FollowSymLinks</span>
+</span></span><span class=line><span class=cl>root@aiur:~# sed -i <span class=s1>&#39;/Indexes/d&#39;</span>  apache2.conf
+</span></span><span class=line><span class=cl>root@aiur:~# grep Indexes apache2.conf
+</span></span><span class=line><span class=cl>root@aiur:~# vi apache2.conf  <span class=c1>#확인하면 Indexes 지워져 있음.</span>
+</span></span></code></pre></div><h4 id=아파치-php-엔진-켜기-일반-유저도-php-코딩-가능하게 class="relative group">아파치 php 엔진 켜기 (일반 유저도 php 코딩 가능하게) <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#%ec%95%84%ed%8c%8c%ec%b9%98-php-%ec%97%94%ec%a7%84-%ec%bc%9c%ea%b8%b0-%ec%9d%bc%eb%b0%98-%ec%9c%a0%ec%a0%80%eb%8f%84-php-%ec%bd%94%eb%94%a9-%ea%b0%80%eb%8a%a5%ed%95%98%ea%b2%8c aria-label=앵커>#</a></span></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>root@bit:/etc/apache2/mods-enabled# vi php8.1.conf
+</span></span><span class=line><span class=cl> <span class=m>23</span>         php_admin_flag engine On <span class=c1>#원래 Off를 On으로 바꿔줌</span>
+</span></span></code></pre></div></div></section><footer class="max-w-prose pt-8 print:hidden"><div class=pt-8><hr class="border-dotted border-neutral-300 dark:border-neutral-600"><div class="flex justify-between pt-3"><span><a class="group flex" href=/devl/linux/009/><span class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"><span class="ltr:inline rtl:hidden">&larr;</span><span class="ltr:hidden rtl:inline">&rarr;</span></span>
+<span class="flex flex-col"><span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500">linux 기초 Day07</span>
+<span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400"><time datetime="2023-10-26 00:00:00 +0000 UTC">2023-10-26</time>
+</span></span></a></span><span><a class="group flex text-right" href=/devl/linux/008/><span class="flex flex-col"><span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500">linux 기초 Day06</span>
+<span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400"><time datetime="2023-10-25 00:00:00 +0000 UTC">2023-10-25</time>
+</span></span><span class="ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"><span class="ltr:inline rtl:hidden">&rarr;</span><span class="ltr:hidden rtl:inline">&larr;</span></span></a></span></div></div></footer></article><div class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12"><a href=#the-top class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400" aria-label="위로 스크롤" title="위로 스크롤">&uarr;</a></div></main><footer class="py-10 print:hidden"><div class="flex items-center justify-between"><div><p class="text-sm text-neutral-500 dark:text-neutral-400">&copy;
+2024
+nuuv</p><p class="text-xs text-neutral-500 dark:text-neutral-400">Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://gohugo.io/ target=_blank rel="noopener noreferrer">Hugo</a> & <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://github.com/jpanther/congo target=_blank rel="noopener noreferrer">Congo</a></p></div><div class="flex flex-row items-center"><div class="me-14 cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"><button id=appearance-switcher-0 type=button aria-label="appearance switcher"><div class="flex h-12 w-12 items-center justify-center dark:hidden" title="다크 모드로 전환"><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="hidden h-12 w-12 items-center justify-center dark:flex" title="라이트 모드로 전환"><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></div></div></footer><div id=search-wrapper class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50" data-url=https://ssomal62.github.io/><div id=search-modal class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"><header class="relative z-10 flex flex-none items-center justify-between px-2"><form class="flex min-w-0 flex-auto items-center"><div class="flex h-8 w-8 items-center justify-center text-neutral-400"><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></span></div><input type=search id=search-query class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent" placeholder=검색 tabindex=0></form><button id=close-search-button class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" title="닫기 (Esc)">
+<span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentcolor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></button></header><section class="flex-auto overflow-auto px-2"><ul id=search-results></ul></section></div></div></div></body></html>
