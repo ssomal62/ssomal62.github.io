@@ -26,6 +26,25 @@ code, kbd, samp, pre {
     font-size: 1em
 }
 
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -40px;
+    margin-bottom: 30px;
+    gap: 3px;
+}
+
+.tech-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.badge-container img {
+    margin-bottom: -20px;
+}
+
 .keyword-text {
     position: absolute;
     top: 50%;
@@ -49,4 +68,31 @@ code, kbd, samp, pre {
     .keyword-text {
         font-size: 14px;
     }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #5F3AFF;
+    color: #fff;
+    text-align: center;
+    border-radius: 30px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
