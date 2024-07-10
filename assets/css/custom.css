@@ -41,6 +41,13 @@ code, kbd, samp, pre {
     border-radius: 10px;
 }
 
+.about-tr {
+    background-color: #36363B;
+    color: #fff;
+    text-align:center;
+    width: 80px;
+}
+
 .badge-container img {
     margin-bottom: -20px;
 }
