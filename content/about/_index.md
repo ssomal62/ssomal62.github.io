@@ -1,6 +1,12 @@
 ---
-title: "Tech Showcase"
+title: ""
 ---
+
+{{<  alert "coffee" >}}
+나만의 취업 노트 만들기
+{{< /alert >}}
+
+<br><br>
 
 # ✨About Me
 
