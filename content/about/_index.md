@@ -18,8 +18,8 @@ title: "Tech Showcase"
         </div>
         <div class="flex flex-row" style="gap: 10px">
             <div><img src = "/icon/gmail.png" class="tech-icon"></div>
-            <div><img src = "/icon/Github-Light.svg" class="tech-icon"></div>
-            <div><img src = "/icon/Docker.svg" class="tech-icon"></div>
+            <div><img src = "/icon/github.png" class="tech-icon"></div>
+            <div><img src = "/icon/docker.png" class="tech-icon"></div>
             <div class="tooltip">
                     <img src="/icon/pdf.png" class="tech-icon">
                     <span class="tooltiptext">↓ 이력서 다운받기 </span>
