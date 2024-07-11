@@ -102,3 +102,33 @@ code, kbd, samp, pre {
     visibility: visible;
     opacity: 1;
 }
+
+.font-emphasis {
+    color: #A78BFA;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #555555;
+    text-decoration-thickness: 0.1em;
+}
+
+.font-emphasis:hover{
+    background-color: #7C3AED;
+    font-weight: 500;
+    border-radius: 0.1em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.font-emphasis-bg {
+    background-color: #7C3AED;
+    font-weight: 500;
+    border-radius: 0.1em;
+    color: #fff;
+}
+
+.font-emphasis-underline {
+    text-decoration: underline;
+    text-decoration-color: #7C3AED;
+    text-decoration-thickness: 0.2em;
+}
+
