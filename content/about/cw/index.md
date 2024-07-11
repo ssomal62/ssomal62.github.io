@@ -9,7 +9,7 @@ tags: [ project ]
 
 # ✨ 프로젝트 소개
 
-[🌐 GitHub](https://github.com/ssomal62/cherryweather)[🌐 YouTube - 프로젝트 시연 영상](https://youtu.be/7pjfnpkY5rc?si=jy0YFM9TY1vKEkIT)
+[🌐 GitHub](https://github.com/ssomal62/cherryweather)　[🌐 YouTube - 프로젝트 시연 영상](https://youtu.be/7pjfnpkY5rc?si=jy0YFM9TY1vKEkIT)
 
 > Presentation
 
@@ -56,8 +56,9 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 #### <span class='font-emphasis-bg'>구현 기능</span>
 
-- 클럽, 멤버십, 좋아요, 피드 CRUD 구현
+- `클럽, 멤버십, 좋아요, 피드` CRUD 기능 구현
 - <span class="font-emphasis-underline">Specification API</span>을 사용한 클럽 검색 기능 구현
+- 객체 불변성 유지를 위한 <span class="font-emphasis-underline">@Builder 패턴, record, Optional</span> 사용
 
 <br/>
 
@@ -225,7 +226,7 @@ end
 
 #### <span class='font-emphasis-bg'>구현 기능 및 기여</span>
 
-- 클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지 화면 구성
+- `클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지` 기능 및 화면 구성
 - NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI개선
 - Framer-motion, Swiper, ApexCharts 라이브러리 사용하여 사용자 경험 향상
     - Framer-motion : 클럽 생성 정보를 여러 화면으로 분할하여 슬라이드 방식으로 자연스럽게 다음 화면으로 넘어가도록 구현
@@ -348,4 +349,4 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
 
 ### 향후 계획
 
-이후에는 개인 프로젝트를 진행하며 백엔드 전체 구조을 빠짐없이 이해하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.
+이후에는 개인 프로젝트를 진행하며 백엔드 전체 구조를 빠짐없이 이해하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.
