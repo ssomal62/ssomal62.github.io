@@ -54,7 +54,7 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 ## ▪ 백엔드
 
-#### 구현 기능
+#### <span class='font-emphasis-bg'>구현 기능</span>
 
 - 클럽, 멤버십, 좋아요, 피드 CRUD 구현
 - <span class="font-emphasis-underline">Specification API</span>을 사용한 클럽 검색 기능 구현
@@ -223,7 +223,7 @@ end
 
 ## ▪ 프론트엔드
 
-#### 구현 기능 및 기여
+#### <span class='font-emphasis-bg'>구현 기능 및 기여</span>
 
 - 클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지 화면 구성
 - NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI개선
@@ -262,7 +262,7 @@ end
       <td>
 <ul>
       <li>각 페이지 컴포넌트에서 헤더와 푸터를 조건부로 렌더링할 수 있도록 변경</li>
-      <li>기본 레이아웃을 제공하면서, Prop 속성에 Boolean 값을 사용하여 필요에 따라 Header와 Footer를 포함하거나 제외할 수 있도록 개선 </li>
+      <li>기본 레이아웃을 제공하면서, <span class="font-emphasis-underline">Prop 속성에 Boolean 값을 사용하여 필요에 따라 Header와 Footer를 포함하거나 제외</span>할 수 있도록 개선 </li>
 </ul>
 </td>
     </tr>
@@ -302,7 +302,7 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
       <td>
 <ul>
       <li>Club 데이터를 관리하는 useClubData 훅을 만들어, API 호출 로직을 통합하고 간소화</li>
-      <li>useClubData 훅에서 동적으로 경로와 메서드 타입을 받아 처리할 수 있도록 함</li>
+      <li>useClubData 훅에서 <span class="font-emphasis-underline">동적으로 경로와 메서드 타입을 받아 처리</span>할 수 있도록 함</li>
 </ul>
 </td>
     </tr>
@@ -331,8 +331,8 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
     - 프로젝트 진행 상황을 효율적으로 관리하기 위해 <span class='font-emphasis'>트리거</span>를 설계하고 운영했습니다. 이를 통해 <span class="font-emphasis-underline">팀의 작업 상황을 직관적</span>으로 확인할 수 있었습니다.
 
 * 최종 발표 준비
-    - <span class='font-emphasis'>PPT 제작</span> - 프로젝트의 주요 내용을 효과적으로 전달하기 위해 최종 발표용 PPT를 제작했습니다.
-    - <span class='font-emphasis'>영상 제작</span> - 프로젝트 시연과 주요 기능을 시각적으로 보여주기 위해 데모 영상 및 발표 영상을 제작했습니다.
+    - [PPT 제작](https://onedrive.live.com/embed?resid=CD903676BB4589EE%2157856&authkey=!AGeOZKiA-pwrdpU&em=2) - 프로젝트의 주요 내용을 효과적으로 전달하기 위해 최종 발표용 PPT를 제작했습니다.
+    - [영상 제작](https://youtu.be/7pjfnpkY5rc?si=jy0YFM9TY1vKEkIT) - 프로젝트 시연과 주요 기능을 시각적으로 보여주기 위해 데모 영상 및 발표 영상을 제작했습니다.
 
 ---
 
