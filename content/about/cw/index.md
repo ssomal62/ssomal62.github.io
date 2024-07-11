@@ -1,16 +1,15 @@
 ---
-layout : post
-title : "Cherry Weather"
+layout: post
+title: "Cherry Weather"
 date: 2024-07-06
 summary: "체리웨더 프로젝트 요약입니다."
-categories : [ project ]
-tags : [ project ]
+categories: [ project ]
+tags: [ project ]
 ---
 
 # ✨ 프로젝트 소개
 
-
-[🌐 GitHub](https://github.com/ssomal62/cherryweather)　[🌐 YouTube - 프로젝트 시연 영상](https://youtu.be/7pjfnpkY5rc?si=jy0YFM9TY1vKEkIT)
+[🌐 GitHub](https://github.com/ssomal62/cherryweather)[🌐 YouTube - 프로젝트 시연 영상](https://youtu.be/7pjfnpkY5rc?si=jy0YFM9TY1vKEkIT)
 
 > Presentation
 
@@ -27,12 +26,6 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 * 프로젝트 기간 : 2023.1.29. ~ 2024.03.07.
 * 인원 : 6명
 
-
-
-
-
-
-
 <br/>
 
 > 프로젝트 목표
@@ -41,32 +34,30 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 - 날씨에 어울리는 스타일 이미지로 매일 아침, 어떤 옷을 입을지 고민하는 시간을 줄여줍니다.
 - 커뮤니티 클럽에서는 같은 관심사를 가진 친구들과 Club을 만들고, 채팅으로 실시간 대화는 물론, 날씨 에 어울리는 Club들을 추천해줍니다.
 
-
 <br/>
 
 > 기술 스택
 
-|                                 |                                                                                                                                                                                                                                                                                                                                                  |
-|:-------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|            `Back`            | Java17, SpringBoot3.2.2, Spring Security, JPA, Redis, JWT, Oauth2, WebClient, Aws-Java-SDK(Object Storage), Log4j2                                                                                                                                                                                                                                       |
-|           `Front`            | React, React-Router, React-cookie, HTML5, JavaScript, Axios, Recoil, NextUI, Swiper, Figma, TailWindCSS, ApexCharts, cross-env, CSS3, Notification, Framer-motion                                                                                                                                                                                        |
+|                                 |                                                                                                                                                                                                                                                                                                                                                           |
+|:-------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|             `Back`              | Java17, SpringBoot3.2.2, Spring Security, JPA, Redis, JWT, Oauth2, WebClient, Aws-Java-SDK(Object Storage), Log4j2                                                                                                                                                                                                                                        |
+|             `Front`             | React, React-Router, React-cookie, HTML5, JavaScript, Axios, Recoil, NextUI, Swiper, Figma, TailWindCSS, ApexCharts, cross-env, CSS3, Notification, Framer-motion                                                                                                                                                                                         |
 | `Naver Cloud` <br/>&<br/> `API` | LinuxServer(ubuntu-20.04), Cloud DB for MySQL, ObjectStorage, NaverLogin, Cloud DB for Redis, Image Optimizer, NCP GeoLocation, OpenAI-Chat(ChatGPT3.5-Turbo), OpenAI-Images(Dall.E-3), KaKao Login, NCloud Chat, Web-push, ip-api, firebase cloud, react-daum-postcode, Ncloud Chat JavaScriptSDK, 공공데이터포털-기상청API, 공공데이터포털-한국환경공단API, 공공데이터포털-한국천문연구원API |
-|        `Tool` & `CI/CD`         | Git, GitHub, Jenkins, Docker, DockerHub, Gradle, npm, IntelliJ, VS Code, Discord, Slack, Trello, DB-Diagram.io, MySQL Workbench, Postman |
+|        `Tool` & `CI/CD`         | Git, GitHub, Jenkins, Docker, DockerHub, Gradle, npm, IntelliJ, VS Code, Discord, Slack, Trello, DB-Diagram.io, MySQL Workbench, Postman                                                                                                                                                                                                                  |
 
 <br/>
 
 
 ---
 
-
 # ✨ 담당 역할 및 경험
 
-##  ▪ 백엔드
+## ▪ 백엔드
 
-#### 구현 기능 
+#### 구현 기능
 
 - 클럽, 멤버십, 좋아요, 피드 CRUD 구현
-- `Specification API`을 사용한 클럽 검색 기능 구현
+- <span class="font-emphasis-underline">Specification API</span>을 사용한 클럽 검색 기능 구현
 
 <br/>
 
@@ -98,7 +89,7 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
       <td>
 <ul>
       <li>ClubQueryDTO 사용하여 검색 조건을 캡슐화</li>
-      <li>ClubQueryService에서 Specification을 동적으로 생성하여 쿼리 구성</li>
+      <li>ClubQueryService에서 <span class="font-emphasis-underline">Specification을 동적</span>으로 생성하여 쿼리 구성</li>
 </ul>
 </td>
     </tr>
@@ -116,7 +107,7 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
       <td class="about-tr">향후 과업</td>
       <td>
 <ul>
-      <li>프로젝트 종료 후 최신 추세를 조사하여 Querydsl을 알게됨</li>
+      <li>프로젝트 종료 후 최신 추세를 조사하여 <span class="font-emphasis-underline">Querydsl</span>을 알게됨</li>
       <li>Querydsl은 타입 안정성, 가독성, 오류 감소, 복잡한 비즈니스 로직 처리에 유리</li>
       <li>앞으로의 프로젝트에서 Querydsl을 학습하여 적용할 계획</li>
 </ul>
@@ -137,6 +128,7 @@ participant Repository as ClubQueryRepository
     Service->>Repository: 최종 쿼리로 클럽 목록 조회
     Repository->>Service: 클럽 목록 반환
     Service->>Client: 검색 결과 반환
+
 {{< /mermaid >}}
 
 </details>
@@ -153,12 +145,17 @@ participant Repository as ClubQueryRepository
     <tr>
       <td class="about-tr">필요성</td>
       <td>
+멤버십
 <ul>
       <li>
-        멤버십 : 클럽이 생성될 때마다 해당 클럽의 멤버십을 자동으로 생성할 필요가 있었음
+        클럽이 생성될 때마다 해당 클럽의 멤버십을 자동으로 생성할 필요가 있었음
       </li>
+
+</ul>
+클럽 성장 지수
+<ul>
       <li>
-        클럽 성장 지수 : 멤버십 서비스에서 발생하는 이벤트에 따라 업데이트됐어야했지만 클럽서비스가 이중으로 호출되어 문제가 발생
+        멤버십 서비스에서 발생하는 이벤트에 따라 업데이트됐어야했지만 <span class="font-emphasis-underline">클럽서비스가 이중으로 호출</span>되어 문제가 발생
       </li>
 </ul>
 </td>
@@ -166,18 +163,29 @@ participant Repository as ClubQueryRepository
     <tr>
       <td class="about-tr">해결 방법</td>
       <td>
-<ul>
-      <li>멤버십 : 클럽 생성 이벤트를 처리하여 클럽 생성 시 자동으로 생성</li>
-      <li>클럽 성장 지수 : 멤버십 서비스에서 발생하는 이벤트를 클럽 서비스로 전달하여성장 지수를 정확하게 업데이트</li>
-</ul>
-</td>
+      멤버십
+        <ul>
+              <li> 클럽 생성 이벤트를 처리하여 클럽 생성 시 자동으로 생성</li>
+        </ul>
+      클럽 성장 지수
+        <ul>
+              <li> 멤버십 서비스에서 발생하는 이벤트를 <span class="font-emphasis-underline">클럽 이벤트리스너로 전달</span></li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td class="about-tr">결과</td>
       <td>
+멤버십
 <ul>
       <li>클럽 생성과 관련된 멤버십 생성 로직을 분리하여 코드의 응집도가 높아지고 모듈화 향상</li>
-      <li>이벤트 퍼블리셔를 사용하여 클럽 서비스가 이중으로 호출되는 문제를 해결하고, 멤버십 서비스에서 발생하는 이벤트에 따라 클럽의 성장 지수를 정확히 업데이트</li>
+</ul>
+클럽 성장 지수
+<ul>
+      <li> <span class="font-emphasis-underline">이벤트 퍼블리셔를 사용하여 클럽 서비스가 이중으로 호출되는 문제를 해결</span>하고, 멤버십 서비스에서 발생하는 이벤트에 따라 클럽의 성장 지수를 정확히 업데이트</li>
+</ul>
+공통
+<ul>
       <li>이벤트 기반 설계를 통해 새로운 요구사항이나 기능 추가 시 기존 코드를 수정하지 않고도 쉽게 확장</li>
 </ul>
     </tr>
@@ -198,7 +206,8 @@ ClubEventListener->>MembershipService: 멤버십 생성
 {{< mermaid >}}
 sequenceDiagram
 MembershipService->>EventPublisher: 성장 이벤트
-EventPublisher->>ClubEventListener: 이벤트 처리
+EventPublisher->>EventQueue: 이벤트 큐에 이벤트 추가
+EventQueue->>ClubEventListener: 이벤트 전달
 alt 성장 지수
 ClubEventListener->>ClubService: 지수 증가
 else
@@ -212,8 +221,6 @@ end
 
 <br/>
 
-
-
 ## ▪ 프론트엔드
 
 #### 구현 기능 및 기여
@@ -221,10 +228,9 @@ end
 - 클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지 화면 구성
 - NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI개선
 - Framer-motion, Swiper, ApexCharts 라이브러리 사용하여 사용자 경험 향상
-  - Framer-motion : 클럽 생성 정보를 여러 화면으로 분할하여 슬라이드 방식으로 자연스럽게 다음 화면으로 넘어가도록 구현
-  - Swiper : 클럽 내 소모임과 피드를 좁은 영역에서도 효과적으로 노출할 수 있도록 Swiper를 활용
-  - ApexCharts : 클럽 상승 지수를 도넛 차트로 시각화하여 정보를 직관적으로 제공
-
+    - Framer-motion : 클럽 생성 정보를 여러 화면으로 분할하여 슬라이드 방식으로 자연스럽게 다음 화면으로 넘어가도록 구현
+    - Swiper : 클럽 내 소모임과 피드를 좁은 영역에서도 효과적으로 노출할 수 있도록 Swiper를 활용
+    - ApexCharts : 클럽 상승 지수를 도넛 차트로 시각화하여 정보를 직관적으로 제공
 
 <br/>
 
@@ -319,31 +325,27 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
 
 <br/>
 
-## ▪  그 외
+## ▪ 그 외
 
-* `Trello` 설계 및 관리 
-  - 프로젝트 진행 상황을 효율적으로 관리하기 위해 [트리거를 설계](#그-외)하고 운영했습니다. 이를 통해 <u>팀의 작업 상황을 직관적</u>으로 확인할 수 있었습니다.
+* Trello 설계 및 관리
+    - 프로젝트 진행 상황을 효율적으로 관리하기 위해 <span class='font-emphasis'>트리거</span>를 설계하고 운영했습니다. 이를 통해 <span class="font-emphasis-underline">팀의 작업 상황을 직관적</span>으로 확인할 수 있었습니다.
 
 * 최종 발표 준비
-  - **PPT 제작** - 프로젝트의 주요 내용을 효과적으로 전달하기 위해 최종 발표용 PPT를 제작했습니다.
-  - **영상 제작** - 프로젝트 시연과 주요 기능을 시각적으로 보여주기 위해 데모 영상 및 발표 영상을 제작했습니다. 
-
+    - <span class='font-emphasis'>PPT 제작</span> - 프로젝트의 주요 내용을 효과적으로 전달하기 위해 최종 발표용 PPT를 제작했습니다.
+    - <span class='font-emphasis'>영상 제작</span> - 프로젝트 시연과 주요 기능을 시각적으로 보여주기 위해 데모 영상 및 발표 영상을 제작했습니다.
 
 ---
-
 
 # ✨ 성장과 이후 계획
 
 ### 전체 시스템 설계 능력
 
-프론트엔드와 백엔드를 모두 경험하면서 전체적인 시스템 설계 능력을 향상시켰습니다. 클라이언트와 서버 간의 효율적인 데이터 통신을 위한 최적의 아키텍처를 설계할 수 있는 능력을 배웠습니다.
-
+프론트엔드와 백엔드를 모두 경험하면서 전체적인 흐름을 파악했습니다. <span class="font-emphasis-underline">클라이언트와 서버 간의 효율적인 데이터 통신을 위한 최적의 아키텍처를 설계하는 방법을 경험</span>했습니다..
 
 ### 협업 경험
 
 팀장으로서 공통 기능 점검, 회의 주도, 진행 상황 조정, 갈등 해결 및 원활한 협업 환경을 조성하는 역할을 했습니다.
 
-
 ### 향후 계획
 
-이후에는 개인 프로젝트를 진행하며 백엔드 전체 구성을 파악하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.
+이후에는 개인 프로젝트를 진행하며 백엔드 전체 구조을 빠짐없이 이해하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.
