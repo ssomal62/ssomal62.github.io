@@ -7,27 +7,31 @@ categories : [ project ]
 tags : [ project ]
 ---
 
-
-
-
-
-
-
-# 📢 프로젝트 소개
+# ✨ 프로젝트 소개
 
 
 [🌐 GitHub](https://github.com/ssomal62/cherryweather)　[🌐 YouTube - 프로젝트 시연 영상](https://youtu.be/7pjfnpkY5rc?si=jy0YFM9TY1vKEkIT)
 
+> Presentation
 
-* 프로젝트 기간 : 2023.1.29 ~ 2024.03.07.
-* 인원 : 5명
+<div class="iframe-container" style="position: relative; width: 100%; height: 0; padding-bottom: 60%; border: 0; border-radius: 3em">
+<iframe src="https://onedrive.live.com/embed?resid=CD903676BB4589EE%2157856&authkey=!AGeOZKiA-pwrdpU&em=2" frameborder="0" scrolling="no"
+style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"> </iframe>
+</div>
 
 
-{{< alert "comment" >}}
-Presentation 　`전체화면 보기 ↘`
-{{< /alert >}}
 
-<iframe width="620" height="300" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FUwIhMFzf4cXAYn4Oyiuyhu%2FCherryWeather_Presentaion%3Ft%3DcSqqm0qoOn0wLCJ4-1%26scaling%3Dcontain%26content-scaling%3Dfixed%26page-id%3D0%253A1%26node-id%3D19-2" allowfullscreen></iframe>
+
+[CherryWeather](#✨-프로젝트-소개)는 날씨를 기반 <u>커뮤니티</u> 추천 + AI를 이용한 복장 추천 서비스입니다.
+
+* 프로젝트 기간 : 2023.1.29. ~ 2024.03.07.
+* 인원 : 6명
+
+
+
+
+
+
 
 <br/>
 
@@ -55,18 +59,22 @@ Presentation 　`전체화면 보기 ↘`
 ---
 
 
-# 🎯 담당 역할 및 경험
+# ✨ 담당 역할 및 경험
 
-## 🖱️ 백엔드
+##  ▪ 백엔드
 
-### 구현 기능
+#### 구현 기능 
 
 - 클럽, 멤버십, 좋아요, 피드 CRUD 구현
-- `Specification API`을 사용한 Club 검색 기능 구현
+- `Specification API`을 사용한 클럽 검색 기능 구현
 
-### 문제 해결 과정
+<br/>
 
-<hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
+{{< alert "dev">}}
+<b>문제 해결 과정</b>
+{{< /alert >}}
+
+<span style="margin-bottom: 10px; margin-top: 10px;"></span>
 
 <details>
 <summary style="font-size: large;">
@@ -98,7 +106,7 @@ Presentation 　`전체화면 보기 ↘`
       <td class="about-tr">결과</td>
       <td>
 <ul>
-      <li>검색어가 클럽 이름, 소개글, 카테고리, 활동 지역등 여러 속성에서 조회</li>
+      <li>검색어가 클럽 이름, 소개글, 카테고리, 활동 지역등 여러 속성에서 조회됨</li>
       <li>동적 쿼리를 통해 정확하고 포괄적인 검색 결과를 반환</li>
       <li>각 검색 조건을 별도의 메서드로 분리했기 때문에 유지보수가 용이</li>
 </ul>
@@ -202,25 +210,30 @@ end
 <hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
 
 
-
 <br/>
 
 
 
-## 🖱️프론트엔드
+## ▪ 프론트엔드
 
-### 구현 기능
+#### 구현 기능 및 기여
 
-- Club(club), 멤버십, 좋아요, 피드, 검색, 마이페이지 화면 구성
-- Layout 컴포넌트 
+- 클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지 화면 구성
+- NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI개선
+- Framer-motion, Swiper, ApexCharts 라이브러리 사용하여 사용자 경험 향상
+  - Framer-motion : 클럽 생성 정보를 여러 화면으로 분할하여 슬라이드 방식으로 자연스럽게 다음 화면으로 넘어가도록 구현
+  - Swiper : 클럽 내 소모임과 피드를 좁은 영역에서도 효과적으로 노출할 수 있도록 Swiper를 활용
+  - ApexCharts : 클럽 상승 지수를 도넛 차트로 시각화하여 정보를 직관적으로 제공
+
 
 <br/>
 
 
-### 문제 해결 과정
+{{< alert "dev">}}
+<b>문제 해결 과정</b>
+{{< /alert >}}
 
-
-<hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
+<span style="margin-bottom: 10px; margin-top: 10px;"></span>
 
 <details>
 <summary style="font-size: large;">
@@ -297,9 +310,6 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
     </tr>
   </tbody>
 </table>
-<br/>
-
-
 </details>
 <hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
 
@@ -309,26 +319,31 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
 
 <br/>
 
-## 🖱️ 그 외
+## ▪  그 외
 
-* 트렐로 설계 및 관리 
-  - 프로젝트 진행 상황을 효율적으로 관리하기 위해 트렐로 보드를 설계하고 운영했습니다. 이를 통해 팀원 간의 협업을 촉진하고, 작업의 우선순위를 체계적으로 정리했습니다.
+* `Trello` 설계 및 관리 
+  - 프로젝트 진행 상황을 효율적으로 관리하기 위해 [트리거를 설계](#그-외)하고 운영했습니다. 이를 통해 <u>팀의 작업 상황을 직관적</u>으로 확인할 수 있었습니다.
 
 * 최종 발표 준비
-  - PPT 제작 프로젝트의 주요 내용을 효과적으로 전달하기 위해 최종 발표용 PPT를 제작했습니다.
-  - 영상 제작 프로젝트 시연과 주요 기능을 시각적으로 보여주기 위해 데모 영상 및 발표 영상을 제작했습니다. 
+  - **PPT 제작** - 프로젝트의 주요 내용을 효과적으로 전달하기 위해 최종 발표용 PPT를 제작했습니다.
+  - **영상 제작** - 프로젝트 시연과 주요 기능을 시각적으로 보여주기 위해 데모 영상 및 발표 영상을 제작했습니다. 
 
 
 ---
 
 
-# 🌱 학습 및 성장
+# ✨ 성장과 이후 계획
 
-`전체 시스템 설계 능력`
+### 전체 시스템 설계 능력
 
-프론트엔드와 백엔드를 모두 경험하면서 전체적인 시스템 설계 능력을 향상시킬 수 있었습니다. 특히, 클라이언트와 서버 간의 효율적인 데이터 통신을 위한 최적의 아키텍처를 설계할 수 있는 능력을 배웠습니다.
+프론트엔드와 백엔드를 모두 경험하면서 전체적인 시스템 설계 능력을 향상시켰습니다. 클라이언트와 서버 간의 효율적인 데이터 통신을 위한 최적의 아키텍처를 설계할 수 있는 능력을 배웠습니다.
 
 
-`팀 내 다양한 역할 수행`
+### 협업 경험
 
-프로젝트에서 프론트엔드와 백엔드 모두에 기여함으로써 팀 내 다양한 역할을 수행할 수 있는 능력을 보여주었습니다. 이는 전체 개발 과정에서 발생할 수 있는 문제를 종합적으로 이해하고 해결하는 데 큰 도움이 되었습니다.
+팀장으로서 공통 기능 점검, 회의 주도, 진행 상황 조정, 갈등 해결 및 원활한 협업 환경을 조성하는 역할을 했습니다.
+
+
+### 향후 계획
+
+이후에는 개인 프로젝트를 진행하며 백엔드 전체 구성을 파악하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.
