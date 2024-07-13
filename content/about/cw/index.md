@@ -224,94 +224,85 @@ ClubQueryService-->>Client: ClubListDTO
   </tbody>
 </table>
 <br/>
-
-
 </details>
-<hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
 
+<hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
 
 <details>
 <summary style="font-size: large;">
-이벤트 리스너와 이벤트 퍼블리셔를 사용한 클럽 관리 개선
+좋아요 기능과 클럽 성장 지수 관리의 충돌 문제
 </summary>
 <br/>
 <table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
   <tbody>
     <tr>
-      <td class="about-tr">필요성</td>
       <td>
-멤버십
+ <span class="font-emphasis-bg-gray ml-2">고민의 발단</span>
 <ul>
       <li>
-        클럽이 생성될 때마다 해당 클럽의 멤버십을 자동으로 생성할 필요가 있었음
+사용자가 클럽에 좋아요를 누를 때 LikeService에서 로직을 처리함과 동시에 클럽의 성장 지수를 증가시켜야 하는 상황에서 서비스 간의 기능 충돌이 발생했습니다.
       </li>
-
-</ul>
-클럽 성장 지수
-<ul>
       <li>
-        멤버십 서비스에서 발생하는 이벤트에 따라 업데이트됐어야했지만 <span class="font-emphasis-underline">클럽서비스가 이중으로 호출</span>되어 문제가 발생
-      </li>
+이전 세미프로젝트에서 이벤트 리스너를 사용하여 서비스 간의 직접 결합을 피하고 느슨한 결합을 구현한 경험이 있었습니다. 비동기로 여러 작업을 처리했던 경험을 바탕으로, 이 방법을 통해 서비스 간 충돌 문제를 해결할 수 있을 것이라 판단하여 적용해보기로 했습니다.
+</li>
 </ul>
 </td>
     </tr>
     <tr>
-      <td class="about-tr">해결 방법</td>
       <td>
-      멤버십
-        <ul>
-              <li> 클럽 생성 이벤트를 처리하여 클럽 생성 시 자동으로 생성</li>
-        </ul>
-      클럽 성장 지수
-        <ul>
-              <li> 멤버십 서비스에서 발생하는 이벤트를 <span class="font-emphasis-underline">클럽 이벤트리스너로 전달</span></li>
-        </ul>
-      </td>
+<span class="font-emphasis-bg-gray ml-2">Specification 적용 과정</span>
+<ul>
+<li>
+좋아요 이벤트가 발생했을 때 클럽의 성장 지수를 업데이트하기 위해 ClubGrowthEvent를 정의했습니다.
+이 이벤트는 클럽 ID, 증가 여부, 사용자 정보, 증가할 점수를 포함합니다.
+</li>
+<li>
+좋아요가 추가되거나 제거될 때 ClubGrowthEvent를 발생시키도록 LikeService에서 이벤트 퍼블리셔를 호출했습니다. 좋아요가 추가되면 성장 지수를 증가시키고, 좋아요가 제거되면 성장 지수를 감소시키는 이벤트를 발생시킵니다. 
+</li>
+<li>
+이 때 발생된 이벤트를 처리하는 ClubEventListener를 구현하여 ClubGrowthEvent를 처리하도로 하였습니다.
+</li>
+</ul>
+
+{{< mermaid >}}
+
+sequenceDiagram
+participant LikeService
+participant EventPublisher
+participant ClubEventListener
+participant ClubService
+
+    LikeService->>EventPublisher: ClubGrowthEvent 발행
+    EventPublisher->>ClubEventListener: ClubGrowthEvent 전달
+    alt 좋아요 추가
+        ClubEventListener->>ClubService: increaseGrowthMeter()
+    else 좋아요 제거
+        ClubEventListener->>ClubService: decreaseGrowthMeter()
+    end
+
+{{< /mermaid >}}
+
+
+
+</td>
     </tr>
     <tr>
-      <td class="about-tr">결과</td>
       <td>
-멤버십
+<span class="font-emphasis-bg-gray ml-2">적용 결과</span>
 <ul>
-      <li>클럽 생성과 관련된 멤버십 생성 로직을 분리하여 코드의 응집도가 높아지고 모듈화 향상</li>
+      <li>이벤트 리스너를 도입함으로써 LikeService와 ClubService 간의 충돌 문제를 해결할 수 있었습니다.</li>
+      <li>클럽 성장 이벤트를 MembershipService에서도 활용하여, 멤버 가입 시 발생하는 성장 점수를 쉽게 관리할 수 있게 되었습니다. </li>
 </ul>
-클럽 성장 지수
-<ul>
-      <li> <span class="font-emphasis-underline">이벤트 퍼블리셔를 사용</span>하여 클럽 서비스가 이중으로 호출되는 문제를 해결하고, 멤버십 서비스에서 발생하는 이벤트에 따라 클럽의 성장 지수를 정확히 업데이트</li>
-</ul>
-공통
-<ul>
-      <li>이벤트 기반 설계를 통해 새로운 요구사항이나 기능 추가 시 기존 코드를 수정하지 않고도 쉽게 확장</li>
-</ul>
+</td>
     </tr>
+    <tr>
   </tbody>
 </table>
 <br/>
-
-{{< mermaid >}}
-sequenceDiagram
-User->>ClubService: 클럽 생성
-ClubService->>EventPublisher: 이벤트 발행
-EventPublisher->>ClubEventListener: 이벤트 처리
-ClubEventListener->>MembershipService: 멤버십 생성
-{{< /mermaid >}}
-
-<br/>
-
-{{< mermaid >}}
-sequenceDiagram
-MembershipService->>EventPublisher: 성장 이벤트
-EventPublisher->>EventQueue: 이벤트 큐에 이벤트 추가
-EventQueue->>ClubEventListener: 이벤트 전달
-alt 성장 지수
-ClubEventListener->>ClubService: 지수 증가
-else
-ClubEventListener->>ClubService: 지수 감소
-end
-{{< /mermaid >}}
-
 </details>
+
 <hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
+
 
 
 <br/>
@@ -320,12 +311,15 @@ end
 
 #### <span class='font-emphasis-bg'>구현 기능 및 기여</span>
 
-- `클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지` 기능 및 화면 구성
-- NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI개선
-- Framer-motion, Swiper, ApexCharts 라이브러리 사용하여 사용자 경험 향상
-    - Framer-motion : 클럽 생성 정보를 여러 화면으로 분할하여 슬라이드 방식으로 자연스럽게 다음 화면으로 넘어가도록 구현
-    - Swiper : 클럽 내 소모임과 피드를 좁은 영역에서도 효과적으로 노출할 수 있도록 Swiper를 활용
-    - ApexCharts : 클럽 상승 지수를 도넛 차트로 시각화하여 정보를 직관적으로 제공
+- `클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지` 기능과 화면 작업을 하였습니다.
+- NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI를 개선하였습니다.
+- Framer-motion, Swiper, ApexCharts 라이브러리 사용하여 사용자 경험을 향상시켰습니다.
+
+[//]: # (    - Framer-motion : 클럽 생성 정보를 여러 화면으로 분할하여 슬라이드 방식으로 자연스럽게 다음 화면으로 넘어가도록 구현)
+
+[//]: # (    - Swiper : 클럽 내 소모임과 피드를 좁은 영역에서도 효과적으로 노출할 수 있도록 Swiper를 활용)
+
+[//]: # (    - ApexCharts : 클럽 상승 지수를 도넛 차트로 시각화하여 정보를 직관적으로 제공)
 
 <br/>
 
@@ -431,7 +425,7 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
 
 ---
 
-# ✨ 성장과 이후 계획
+# ✨ 회고 및 향후 계획
 
 #### 전체 시스템 설계 능력
 
