@@ -23,16 +23,19 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 [CherryWeather](#✨-프로젝트-소개)는 날씨를 기반 <u>커뮤니티</u> 추천 + AI를 이용한 복장 추천 서비스입니다.
 
-* 프로젝트 기간 : 2023.1.29. ~ 2024.03.07.
+* 프로젝트 기간 : 2024.1.29. ~ 2024.03.07.
 * 인원 : 6명
 
 <br/>
 
 > 프로젝트 목표
 
-- 오늘의 날씨부터 주간 예보까지, 최신 기상 데이터를 기반으로 여러분에게 딱 맞는 옷차림을 추천해드립니다.
-- 날씨에 어울리는 스타일 이미지로 매일 아침, 어떤 옷을 입을지 고민하는 시간을 줄여줍니다.
-- 커뮤니티 클럽에서는 같은 관심사를 가진 친구들과 Club을 만들고, 채팅으로 실시간 대화는 물론, 날씨 에 어울리는 Club들을 추천해줍니다.
+
+* 🌥️ 사용자에게 오늘 날씨 및 주간 날씨 그 외 기상과 대기 관련 정보를 제공합니다.
+* 👕 오늘 날씨에 적합한 복장을 대화형 AI 채팅을 통해 추천해줍니다.
+* 🙏🏼 커뮤니티 결합으로 날씨에 어울리는 클럽을 추천, 클럽 활동 공간(채팅, 소모임, 피드)을 제공합니다. 
+
+
 
 <br/>
 
@@ -56,81 +59,172 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 #### <span class='font-emphasis-bg'>구현 기능</span>
 
-- `클럽, 멤버십, 좋아요, 피드` CRUD 기능 구현
-- <span class="font-emphasis-underline">Specification API</span>을 사용한 클럽 검색 기능 구현
-- 객체 불변성 유지를 위한 <span class="font-emphasis-underline">@Builder 패턴, record, Optional</span> 사용
+- `클럽, 멤버십, 좋아요, 피드` CRUD 기능을 구현하였습니다.
+- <span class="font-emphasis-underline">Specification API</span>을 사용하여 포괄적인 클럽 검색 기능을 구현하였습니다.
+- 불변성을 유지하는 방법에 익숙해지기 위해 <span class="font-emphasis-underline">@Builder 패턴, record, Optional</span> 를 사용하였습니다.
 
 <br/>
 
-{{< alert "dev">}}
-<b>문제 해결 과정</b>
+{{< alert "comment">}}
+<b>마주한 문제들 - 백엔드 편</b>
 {{< /alert >}}
 
 <span style="margin-bottom: 10px; margin-top: 10px;"></span>
 
+
 <details>
 <summary style="font-size: large;">
-포괄적인 클럽 검색 기능 구현을 통한 사용자 경험 향상
+반복되는 검증 작업을 효율적으로 처리할 수 있을까.
 </summary>
 <br/>
 <table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
   <tbody>
     <tr>
-      <td class="about-tr">필요성</td>
       <td>
+ <span class="font-emphasis-bg-gray ml-2">고민의 발단</span>
 <ul>
-      <li>
-      키워드가 일치하는 클럽 이름만 조회뿐만 아니라 소개글, 카테고리, 활동 지역 등 다양한 속성에서의 조회 필요
-      </li>
+  <li>클럽 데이터를 저장하거나 업데이트할 때, 유효하지 않은 데이터가 저장되는 것을 방지할 검사가 필요했습니다. </li>
+  <li>@Valid 어노테이션을 사용한 기본 유효성 검사 방법도 있었지만, 더 유연하고 재사용이 가능한 검증 로직을 모색했습니다.</li>
+  <li>빌더 패턴처럼 메서드 체이닝 방식을 사용하면 가독성이 향상되고, 재사용을 선택적으로 할 수 있을 것 같아서 조사해보았습니다. 그 결과, 메서드 체이닝의 핵심은 객체 자체를 반환하는 return this; 라는 것을 알게 되었습니다.</li>
 </ul>
 </td>
     </tr>
     <tr>
-      <td class="about-tr">해결 방법</td>
       <td>
+<span class="font-emphasis-bg-gray ml-2">메서드 체이닝 검증 클래스 작성</span>
 <ul>
-      <li>ClubQueryDTO 사용하여 검색 조건을 캡슐화</li>
-      <li>ClubQueryService에서 <span class="font-emphasis-underline">Specification을 동적</span>으로 생성하여 쿼리 구성</li>
+<li>유효성 검사 로직을 캡슐화하기 위해 ClubValidator 클래스를 작성했습니다.</li>
+<li>ClubValidator는 Club 엔티티를 매개 변수로 받아 생성자를 통해 초기화하고, ClubValidator of(Club club) 메서드는 Club 객체를 받아 ClubValidator 객체를 생성합니다.</li>
+<li>Club 엔티티의 필드 값을 검증하는 각각의 메서드를 만들고 로직을 구현합니다. 여기서 유효성 검사를 통과하지 못하면 errors 리스트에 오류 메시지를 추가합니다.</li>
+<li>각 검증 메서드는 return this;를 사용하여 ClubValidator 자신을 반환해주었습니다. 이로써 모든 검증 메서드는 ClubValidator 타입을 반환하여 메서드 체이닝이 가능하게 합니다.</li>
 </ul>
+
+{{< mermaid >}}
+
+classDiagram
+direction LR
+class ClubValidator {
+-Club club
+-List~String~ errors
++of(Club) ClubValidator
++isValid() boolean
++validateName() ClubValidator
++validateCode() ClubValidator
++validateActivityArea() ClubValidator
++validateCategory() ClubValidator
++validateStatus() ClubValidator
++getErrors() List~String~
+}
+ClubValidator --> Club
+
+    class Club {
+        -String name
+        -String code
+        -String activitiesArea
+        -Category category
+        -Status status
+        -　　　. . .
+    }
+
+{{< /mermaid >}}
 </td>
     </tr>
     <tr>
-      <td class="about-tr">결과</td>
       <td>
+<span class="font-emphasis-bg-gray ml-2">적용 결과</span>
 <ul>
-      <li>검색어가 클럽 이름, 소개글, 카테고리, 활동 지역등 여러 속성에서 조회됨</li>
-      <li>동적 쿼리를 통해 정확하고 포괄적인 검색 결과를 반환</li>
-      <li>각 검색 조건을 별도의 메서드로 분리했기 때문에 유지보수가 용이</li>
-</ul>
-</td>
-    </tr>
-    <tr>
-      <td class="about-tr">향후 과업</td>
-      <td>
-<ul>
-      <li>프로젝트 종료 후 최신 추세를 조사하여 <span class="font-emphasis-underline">Querydsl</span>을 알게됨</li>
-      <li>Querydsl은 타입 안정성, 가독성, 오류 감소, 복잡한 비즈니스 로직 처리에 유리</li>
-      <li>앞으로의 프로젝트에서 Querydsl을 학습하여 적용할 계획</li>
+  <li>클럽 데이터를 검증하는 작업이 더욱 체계적이게 되었습니다. </li>
+  <li>가독성이 향상되고 재사용이 가능하여 작업의 효율을 높였습니다. </li>
+  <li>새로운 검증 규칙이 필요할 때는 메서드를 추가하고 체이닝하여 사용할 수 있어 확장성이 용이합니다.</li>
 </ul>
 </td>
     </tr>
   </tbody>
 </table>
 <br/>
+</details>
+
+<hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
+
+<details>
+<summary style="font-size: large;">
+검색할 때 클럽 이름뿐만 아니라 관련있는 클럽들을 모두 불러왔으면 좋겠어.
+</summary>
+<br/>
+<table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
+  <tbody>
+    <tr>
+      <td>
+ <span class="font-emphasis-bg-gray ml-2">고민의 발단</span>
+<ul>
+      <li>
+      검색키워드 하나로 클럽 이름, 소개글, 카테고리, 활동 지역이 일치하는 데이터를 가져오고, 별도로 사용자가 카테고리나 활동 지역을 지정했을 경우 일치하는 클럽 목록을 모두 보여주고 싶었습니다. </li>
+   <li>ClubValidator를 메서드 체이닝 방식으로 구성했던 것을 떠올려, '검색 쿼리 또한 비슷하게 할 수 있지 않을까?' 조사하여 찾은 방법이 Specification API 이었습니다.
+      </li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <td>
+<span class="font-emphasis-bg-gray ml-2">Specification 적용 과정</span>
+<ul>
+<li>
+쿼리용 리포지토리를 별도로 생성하여 JpaRepository외에 JpaSpecificationExecutor을 상속받도록 하였습니다.
+</li>
+<li>
+ Specification&lt;T&gt;의 toPredicate를 호출하여 검색조건들을 완전 일치(equal), 부분 일치(like), 비교(greaterThanOrEqualTo) 쿼리를 사용하여 해당되는 root(클럽 엔터티)는 Specification&lt;Club&gt;으로 반환하도록 각각 메서드를 작성하였습니다. 
+</li>
+<li>
+이렇게 작성한 쿼리 메서드는 ClubQueryService에서 Specification 객체를 생성하여 필요한 쿼리 메서드들로 조합합니다. 하나의 쿼리메서드를 거쳐 나온 클럽 데이터들은 다음 쿼리메서드에서 and 연산을 통해 기존 데이터에 결합됩니다. 
+</li>
+<li>
+이러한 방식으로 원하는 조건을 만족시킨 클럽 목록을 사용자에게 반환하도록 하였습니다.
+</li>
+</ul>
+
+
 {{< mermaid >}}
 sequenceDiagram
-participant Client
-participant Service as ClubQueryService
-participant Repository as ClubQueryRepository
+actor Client
+participant ClubQueryService
+participant ClubSpecification
+participant ClubRepository
 
-    Client->>Service: 검색 조건 전달
-    Service->>Service: ClubQueryDTO에서 조건 추출
-    Service->>Service: Specification 생성 및 조합
-    Service->>Repository: 최종 쿼리로 클럽 목록 조회
-    Repository->>Service: 클럽 목록 반환
-    Service->>Client: 검색 결과 반환
-
+Client->>ClubQueryService: findAllByConditions(ClubQueryDTO)
+ClubQueryService->>ClubSpecification: buildSpecification(ClubQueryDTO)
+ClubSpecification-->>ClubQueryService: Specification
+ClubQueryService->>ClubRepository: findAll(Specification)
+ClubRepository-->>ClubQueryService: List&lt;Club&gt;
+ClubQueryService->>ClubQueryService: convertToClubListDTO(List&lt;Club&gt;)
+ClubQueryService-->>Client: ClubListDTO
 {{< /mermaid >}}
+
+</td>
+    </tr>
+    <tr>
+      <td>
+<span class="font-emphasis-bg-gray ml-2">적용 결과</span>
+<ul>
+      <li>사용자가 입력한 키워드가 클럽의 여러 속성(이름, 설명, 태그 등)과 일치하는 모든 클럽을 조회할 수 있도록 하였습니다.</li>
+      <li>여러 페이지에서 특정 조건에 맞는 클럽 목록을 효율적으로 조회하고 데이터를 반환할 수 있게 되었습니다.</li>
+      <li>각 검색 조건을 별도의 메서드로 분리했기 때문에 추가적인 조건이 생겼을 때 확장이 용이하다는 것을 알게되었습니다.</li>
+</ul>
+</td>
+    </tr>
+    <tr>
+      <td>
+<span class="font-emphasis-bg-gray ml-2">그 후</span>
+<ul>
+<li>프로젝트 종료 후 최신 트렌드를 조사하다가 <span class="font-emphasis-underline">Querydsl</span>을 알게 되었습니다.</li>
+<li>Specification과 Querydsl은 동적으로 쿼리를 작성하는 점에서는 동일하지만, Querydsl은 타입 안전성, 가독성, 오류 감소, 복잡한 비즈니스 로직 처리에 더 유리합니다.</li>
+<li>앞으로의 프로젝트에서 Querydsl을 학습하여 적용해보려고 합니다.</li>
+</ul>
+</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
 
 </details>
 <hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
@@ -183,7 +277,7 @@ participant Repository as ClubQueryRepository
 </ul>
 클럽 성장 지수
 <ul>
-      <li> <span class="font-emphasis-underline">이벤트 퍼블리셔를 사용하여 클럽 서비스가 이중으로 호출되는 문제를 해결</span>하고, 멤버십 서비스에서 발생하는 이벤트에 따라 클럽의 성장 지수를 정확히 업데이트</li>
+      <li> <span class="font-emphasis-underline">이벤트 퍼블리셔를 사용</span>하여 클럽 서비스가 이중으로 호출되는 문제를 해결하고, 멤버십 서비스에서 발생하는 이벤트에 따라 클럽의 성장 지수를 정확히 업데이트</li>
 </ul>
 공통
 <ul>
@@ -263,7 +357,7 @@ end
       <td>
 <ul>
       <li>각 페이지 컴포넌트에서 헤더와 푸터를 조건부로 렌더링할 수 있도록 변경</li>
-      <li>기본 레이아웃을 제공하면서, <span class="font-emphasis-underline">Prop 속성에 Boolean 값을 사용하여 필요에 따라 Header와 Footer를 포함하거나 제외</span>할 수 있도록 개선 </li>
+      <li>기본 레이아웃을 제공하면서, <span class="font-emphasis-underline">Prop 속성에 Boolean 값을 사용</span>하여 필요에 따라 Header와 Footer를 포함하거나 제외할 수 있도록 개선 </li>
 </ul>
 </td>
     </tr>
@@ -339,14 +433,14 @@ Recoil 기반 Club(club) 데이터 관리 기능 개선
 
 # ✨ 성장과 이후 계획
 
-### 전체 시스템 설계 능력
+#### 전체 시스템 설계 능력
 
-프론트엔드와 백엔드를 모두 경험하면서 전체적인 흐름을 파악했습니다. <span class="font-emphasis-underline">클라이언트와 서버 간의 효율적인 데이터 통신을 위한 최적의 아키텍처를 설계하는 방법을 경험</span>했습니다..
+* 프론트엔드와 백엔드를 모두 경험하면서 전체적인 흐름을 파악했습니다. 클라이언트와 서버 간의 효율적인 데이터 통신을 위한 <span class="font-emphasis-underline">최적의 아키텍처를 설계</span>하는 방법을 경험했습니다..
 
-### 협업 경험
+#### 협업 경험
 
-팀장으로서 공통 기능 점검, 회의 주도, 진행 상황 조정, 갈등 해결 및 원활한 협업 환경을 조성하는 역할을 했습니다.
+* 팀장으로서 공통 기능 점검, 회의 주도, 진행 상황 조정, 갈등 해결 및 원활한 협업 환경을 조성하는 역할을 했습니다.
 
-### 향후 계획
+#### 향후 계획
 
-이후에는 개인 프로젝트를 진행하며 백엔드 전체 구조를 빠짐없이 이해하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.
+* 이후에는 개인 프로젝트를 진행하며 백엔드 전체 구조를 빠짐없이 이해하고 싶습니다. NoSQL 등 다양한 데이테베이스를 다뤄보고, 쿼리 DSL을 사용해보고 싶습니다. 최신 기술 트렌드를 찾아 경험하고, CI/CD, 도커 등과 같은 배포 경험과 운영(Ops) 역량을 강화하고자 합니다.

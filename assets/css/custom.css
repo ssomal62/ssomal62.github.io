@@ -126,6 +126,13 @@ code, kbd, samp, pre {
     color: #fff;
 }
 
+.font-emphasis-bg-gray {
+    background-color: #555555;
+    font-weight: 500;
+    border-radius: 0.1em;
+    color: #fff;
+}
+
 .font-emphasis-underline {
     text-decoration: underline;
     text-decoration-color: #7C3AED;
