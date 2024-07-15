@@ -57,16 +57,49 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 ## ▪ 백엔드
 
-#### <span class='font-emphasis-bg'>구현 기능</span>
+{{< alert "comment">}}
+<b>구현 기능</b>
+{{< /alert >}}
 
-- `클럽, 멤버십, 좋아요, 피드` CRUD 기능을 구현하였습니다.
-- <span class="font-emphasis-underline">Specification API</span>을 사용하여 포괄적인 클럽 검색 기능을 구현하였습니다.
-- 불변성을 유지하는 방법에 익숙해지기 위해 <span class="font-emphasis-underline">@Builder 패턴, record, Optional</span> 를 사용하였습니다.
+
+**클럽 기능**
+
+* 클럽 CRUD, ClubCreationEvent 발행하여 데이터 처리 자동화.
+* **클럽 검색**: ClubQueryService와 Specification을 이용하여 다양한 조건으로 클럽 검색.
+* **성장 지표 관리**: increaseGrowthMeter 메서드를 통해 클럽 성장 미터 증가 및 등급 자동 업그레이드.
+* **이벤트 처리**: 클럽 생성 및 성장 이벤트를 비동기로 처리하여 회원가입 절차 및 성장 지표 업데이트.
+
+**멤버십 기능**
+
+* 멤버십 CRUD
+* **조건부 검색**: 클럽 ID와 사용자 이메일 등의 조건으로 멤버십 검색.
+* **중복 멤버십 검사**: 동일 사용자가 중복 가입하지 않도록 검사.
+* **첫 멤버 확인 및 역할 할당**: 클럽의 첫 멤버를 확인하고 호스트 역할 자동 할당
+
+**좋아요 기능**
+
+* 좋아요 CRUD
+* **좋아요 상태 관리**: LikeType을 사용하여 다양한 유형(CLUB, FEED, MEMBER)에 대해 공용으로 좋아요 상태 관리.
+* **좋아요 그룹화 조회**: findAllTypeGroupedByLikeType 메서드를 통해 좋아요 항목을 LikeType별로 그룹화하여 조회.
+* **좋아요 토글**: toggleLike 메서드를 통해 좋아요 상태를 추가하거나 제거하며, 좋아요가 변경될 때마다 ClubGrowthEvent 이벤트 발행하여 성장 지수 업데이트.
+
+**피드 기능**
+
+* 피드 CRUD
+* **공개 피드 조회**: 피드 작성시 공개여부를 선택할 수 있게하여 해당 피드를 공개 또는 속한 클럽에서만 공개 결정
+* **단일 피드 조회**: 특정 피드의 상세 정보 조회.
+
+**기타**
+
+* 클럽, 멤버십, 피드 생성 및 업데이트 시 유효성 검사 수행하여 데이터 무결성 보장.
+* 각 도메인별 유효성 검사기 사용 (ClubValidator, FeedValidator).
+* 불변성을 유지하는 방법에 익숙해지기 위해 @Builder 패턴, record, Optional 를 사용
+
 
 <br/>
 
 {{< alert "comment">}}
-<b>마주한 문제들 - 백엔드 편</b>
+<b>트러블 슈팅</b>
 {{< /alert >}}
 
 <span style="margin-bottom: 10px; margin-top: 10px;"></span>
@@ -74,7 +107,7 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 <details>
 <summary style="font-size: large;">
-반복되는 검증 작업을 효율적으로 처리할 수 있을까.
+클럽 데이터 유효성 검증 개선 작업
 </summary>
 <br/>
 <table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
@@ -148,7 +181,7 @@ ClubValidator --> Club
 
 <details>
 <summary style="font-size: large;">
-검색할 때 클럽 이름뿐만 아니라 관련있는 클럽들을 모두 불러왔으면 좋겠어.
+Specification API를 활용한 클럽 검색 최적화
 </summary>
 <br/>
 <table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
@@ -230,7 +263,7 @@ ClubQueryService-->>Client: ClubListDTO
 
 <details>
 <summary style="font-size: large;">
-좋아요 기능과 클럽 성장 지수 관리의 충돌 문제
+좋아요 기능과 클럽 성장 지수 관리 충돌 해결
 </summary>
 <br/>
 <table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
