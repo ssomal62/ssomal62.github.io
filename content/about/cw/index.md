@@ -23,7 +23,7 @@ style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0"
 
 [CherryWeather](#✨-프로젝트-소개)는 날씨를 기반 <u>커뮤니티</u> 추천 + AI를 이용한 복장 추천 서비스입니다.
 
-* 프로젝트 기간 : 2024.1.29. ~ 2024.03.07.
+* 프로젝트 기간 : 2024.01.29. ~ 2024.03.07.
 * 인원 : 6명
 
 <br/>
@@ -263,7 +263,7 @@ ClubQueryService-->>Client: ClubListDTO
 
 <details>
 <summary style="font-size: large;">
-좋아요 기능과 클럽 성장 지수 관리 충돌 해결
+ClubService와 LikeService 간 순환 의존성 문제 해결
 </summary>
 <br/>
 <table style="font-size: medium; margin-top: -10px; margin-bottom: -10px">
@@ -273,8 +273,24 @@ ClubQueryService-->>Client: ClubListDTO
  <span class="font-emphasis-bg-gray ml-2">고민의 발단</span>
 <ul>
       <li>
-사용자가 클럽에 좋아요를 누를 때 LikeService에서 로직을 처리함과 동시에 클럽의 성장 지수를 증가시켜야 하는 상황에서 서비스 간의 기능 충돌이 발생했습니다.
+ClubService에 LikeService 의존성을 추가하여 클럽 목록 반환 시 liked 정보를 포함하게 했는데(🟢) , 좋아요를 누를 때 LikeService가 다시 ClubService의 성장 지수 증감 메서드를 호출하면서 순환 의존성 문제가 발생하였습니다(🔴) .
       </li>
+</ul>
+
+{{< mermaid >}}
+stateDiagram-v2
+
+Client --> ClubService: 🟢 클럽 목록 요청
+Client --> LikeService: 🔴 좋아요 토글
+ClubService --> LikeService: 🟢 좋아요 정보 요청
+LikeService --> ClubService: 🔴 성장 지수 업데이트 요청
+ClubService --> 충돌: 순환 의존성 발생
+
+
+
+{{< /mermaid >}}
+
+<ul>
       <li>
 이전 세미프로젝트에서 이벤트 리스너를 사용하여 서비스 간의 직접 결합을 피하고 느슨한 결합을 구현한 경험이 있었습니다. 비동기로 여러 작업을 처리했던 경험을 바탕으로, 이 방법을 통해 서비스 간 충돌 문제를 해결할 수 있을 것이라 판단하여 적용해보기로 했습니다.
 </li>
@@ -283,7 +299,7 @@ ClubQueryService-->>Client: ClubListDTO
     </tr>
     <tr>
       <td>
-<span class="font-emphasis-bg-gray ml-2">Specification 적용 과정</span>
+<span class="font-emphasis-bg-gray ml-2">이벤트 리스너 적용 과정</span>
 <ul>
 <li>
 좋아요 이벤트가 발생했을 때 클럽의 성장 지수를 업데이트하기 위해 ClubGrowthEvent를 정의했습니다.
@@ -337,12 +353,16 @@ participant ClubService
 <hr style="margin-bottom: 10px; margin-top: 10px; border-color: #6326C2"/>
 
 
-
 <br/>
+<br/>
+
+---
 
 ## ▪ 프론트엔드
 
-#### <span class='font-emphasis-bg'>구현 기능 및 기여</span>
+{{< alert "comment">}}
+<b>구현 기능</b>
+{{< /alert >}}
 
 - `클럽, 멤버십, 좋아요, 피드, 검색, 마이페이지` 기능과 화면 작업을 하였습니다.
 - NextUI와 TailwindCSS를 사용하여 앱 전반적인 디자인 및 UI를 개선하였습니다.
@@ -358,7 +378,7 @@ participant ClubService
 
 
 {{< alert "dev">}}
-<b>문제 해결 과정</b>
+<b>트러블 슈팅</b>
 {{< /alert >}}
 
 <span style="margin-bottom: 10px; margin-top: 10px;"></span>

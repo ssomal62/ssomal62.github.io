@@ -21,7 +21,7 @@ section 비트캠프
 section 비트캠프
 [AWS] DevOps :active, 24-06, 24-07
 section 항해99
-취업 리부트 :active, 24-07, 24-07
+취업 리부트 :active, 24-07, 24-10
 {{< /mermaid >}}
 
 
@@ -47,7 +47,7 @@ section 항해99
     </td>
     <td style="text-align: left;">
      - 도커 컴포즈를 활용하여 AWS 배포<br/>
-     - EUREKA SEVER 아키텍쳐, SOLID 원칙 <br/>
+     - EUREKA SEVER 아키텍쳐와 SOLID 이론 <br/>
      - 자율 프로젝트<br/>
     </td>
     <td style="text-align: center; vertical-align: middle;">진행중</td>
