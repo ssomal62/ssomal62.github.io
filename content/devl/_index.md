@@ -50,7 +50,7 @@ section 항해99
      - EUREKA SEVER 아키텍쳐와 SOLID 이론 <br/>
      - 자율 프로젝트<br/>
     </td>
-    <td style="text-align: center; vertical-align: middle;">진행중</td>
+    <td style="text-align: center; vertical-align: middle;"><span style="color:#E879D8">`수료`</span> </td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">
