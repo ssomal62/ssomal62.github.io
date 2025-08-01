@@ -6,7 +6,6 @@ baseURL = "https://ssomal62.github.io/"
 defaultContentLanguage = "ko"
 
 enableRobotsTXT = false
-paginate = 10
 summaryLength = 0
 languageCode = "ko"
 
@@ -21,5 +20,8 @@ mainSections = ["devl", "posts", "about"]
 [params.list]
 groupByYear = true
 
+[pagination]
+pagerSize = 10
 
+ignoreLogs = ['warning-partial-superfluous-prefix']
 
