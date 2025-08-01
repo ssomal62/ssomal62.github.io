@@ -7,7 +7,7 @@
     <section>{{ .Content | emojify }}</section>
 </article>
 
-{{ $categories := slice "eureka" "codingtest" "troubleshooting" }} <!-- 여기 원하는 카테고리를 추가하세요 -->
+{{ $categories := slice "project" "codingtest" }} <!-- 여기 원하는 카테고리를 추가하세요 -->
 {{ range $category := $categories }}
 <section class="flex justify-between items-start mb-12">
     <!-- 왼쪽: 카테고리 이미지 -->
@@ -37,7 +37,7 @@
 
         {{ if $latestPages }}
         {{ range $latestPages }}
-        <article class="mb-6 flex flex-row">
+        <article class="mb-5 flex flex-row">
             <div class="flex justify-center items-center mr-2">
                 <span style="font-family: 'Concert One'; font-size: 35pt; color: #5F3AFF">|</span>
             </div>

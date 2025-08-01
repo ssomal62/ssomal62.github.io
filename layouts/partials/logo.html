@@ -6,10 +6,10 @@
 <!-- prettier-ignore-attribute -->
 <img
         src="{{ $logo.RelPermalink }}"
-        width="{{ div $logo.Width 2 }}"
-        height="{{ div $logo.Height 2 }}"
+        width="{{ $logo.Width }}"
+        height="{{ $logo.Height }}"
         class="max-h-[10rem] object-scale-down object-left
-        {{ if $logo_dark }}hidden dark:flex{{ end }}"
+       {{ if $logo_dark }}hidden dark:flex{{ end }}"
         alt="{{ .Site.Title }}"
 />
 {{- if $logo_dark }}

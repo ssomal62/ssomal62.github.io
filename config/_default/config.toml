@@ -17,6 +17,7 @@ languageCode = "ko"
 [params]
 mainSections = ["devl", "posts", "about"]
 
+
 [params.list]
 groupByYear = true
 

@@ -39,7 +39,6 @@ section 항해99
      - 자료구조 & 알고리즘<br/>
      - 대기업 시나리오 프로젝트 <br/>
     </td>
-    <td style="text-align: center; vertical-align: middle;">진행중</td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">
@@ -50,7 +49,6 @@ section 항해99
      - EUREKA SEVER 아키텍쳐와 SOLID 이론 <br/>
      - 자율 프로젝트<br/>
     </td>
-    <td style="text-align: center; vertical-align: middle;"><span style="color:#E879D8">`수료`</span> </td>
   </tr>
   <tr>
     <td style="text-align: center; vertical-align: middle;">
@@ -63,14 +61,7 @@ section 항해99
      - 도커 컨테이너 애플리케이션 배포<br/>
      - 운영자를 위한 DevOps
     </td>
-    <td style="text-align: center; vertical-align: middle;"><span style="color:#E879D8">`수료`</span> </td>
   </tr>
 </table>
-
-
-
-{{< lead >}}
-항해99 취업리부트 코스부터는 학습 과정을 `Blog`에 기록하고 있습니다.
-{{< /lead >}}
 
 ---
